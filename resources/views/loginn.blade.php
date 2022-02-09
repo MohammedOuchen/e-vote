@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/home.css') }}" />
     <title>Login page</title>
 
@@ -17,6 +18,11 @@
         color: #6a6f8c;
         background: white;
         font: 600 16px/18px 'Open Sans', sans-serif;
+    }
+
+    html,
+    body {
+        overflow: hidden;
     }
 
     *,
@@ -38,7 +44,8 @@
 
     a {
         color: inherit;
-        text-decoration: none
+        text-decoration: none;
+
     }
 
     .login-wrap {
@@ -161,7 +168,7 @@
     }
 
     #circle {
-        background: #f00;
+        background: #DD131A;
         width: 60px;
         height: 60px;
         border-radius: 50%;
@@ -170,13 +177,36 @@
         z-index: 1;
         position: absolute;
     }
+
+    #rectangleB {
+        width: 120px;
+        height: 1000px;
+        background: #0E115A;
+        float: left;
+        margin-left: -50px;
+    }
+
+    #rectangleW {
+        width: 120px;
+        height: 1000px;
+        background: #fff;
+        float: left;
+
+    }
+
+    #rectangleR {
+        width: 120px;
+        height: 1000px;
+        background: #DD131A;
+        float: left;
+
+    }
     </style>
 
 </head>
 
 <body>
     <header>
-        <img src="">
         <nav>
             <ul>
                 <li><a href="#">Acceuil</a></li>
@@ -187,8 +217,11 @@
     </header>
 
     <div id="circle"></div>
+    <div id="rectangleB"></div>
+    <div id="rectangleW"></div>
+    <div id="rectangleR"></div>
 
-    <div class="login-wrap">
+    <div class=" login-wrap">
         <div class="login-html">
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
                 class="tab">CONNEXION</label>
