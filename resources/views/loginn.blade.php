@@ -44,13 +44,14 @@
     .login-wrap {
         width: 100%;
         margin: auto;
-        margin-top: 50px;
+        margin-top: -30px;
         margin-right: 150px;
         max-width: 525px;
         min-height: 670px;
         position: relative;
         box-shadow: #0E115A;
-
+        z-index: -1;
+        margin-bottom: 20px;
     }
 
     .login-html {
@@ -156,12 +157,12 @@
     }
 
     #circle {
-        background: #DD131A;
+        background: #f00;
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        margin-left: 1070px;
-        margin-top: 90px;
+        margin-top: 200px;
+        margin-left: 1080px;
     }
     </style>
 
@@ -169,6 +170,7 @@
 
 <body>
     <div id="circle"></div>
+
     <div class="login-wrap">
         <div class="login-html">
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
