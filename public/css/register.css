@@ -1,30 +1,30 @@
 body {
     margin: 0;
-    color: #6a6f8c;
+    color: white;
     background: white;
-    font: 600 16px/18px 'Open Sans', sans-serif;
+    font: 600 16px/18px "Open Sans", sans-serif;
 }
 
 *,
 :after,
 :before {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 .clearfix:after,
 .clearfix:before {
-    content: '';
-    display: table
+    content: "";
+    display: table;
 }
 
 .clearfix:after {
     clear: both;
-    display: block
+    display: block;
 }
 
 a {
     color: inherit;
-    text-decoration: none
+    text-decoration: none;
 }
 
 .register-wrap {
@@ -35,7 +35,7 @@ a {
     margin-left: 650px;
     max-width: 525px;
     position: absolute;
-    box-shadow: #0E115A;
+    box-shadow: #0e115a;
     z-index: 0;
     margin-bottom: 20px;
 }
@@ -46,7 +46,7 @@ a {
     position: absolute;
     height: auto;
     padding: 90px 70px 50px 70px;
-    background: #0E115A;
+    background: #0e115a;
     border-radius: 20px;
 }
 
@@ -69,7 +69,6 @@ a {
     padding-bottom: 5px;
     margin: 0 15px 10px 0;
     display: inline-block;
-
 }
 
 .register-html .sign-in:checked+.tab,
@@ -99,23 +98,28 @@ a {
     padding: 8px;
     padding-left: 10px;
     border-radius: 20px;
-    background: #0E115A;
+    background: #0e115a;
     border-color: white;
-
+    color: #fff;
 }
 
-.register-form .group select{
+select {
     border-radius: 20px;
     padding: 8px;
     padding-left: 10px;
-    background: #0E115A;
+    background: white;
     border-color: white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #0e115a;
+    margin-right: 100px;
 }
 
 .register-form .group input[data-type="password"] {
     text-security: circle;
     -webkit-text-security: circle;
-    background: #3c3d61;
+    background: #0e115a;
 }
 
 .register-form .group .label {
@@ -125,13 +129,13 @@ a {
 }
 
 .register-form .group .button {
-    background: #DD131A;
+    background: #dd131a;
 }
 
 .hr {
     height: 2px;
     margin: 20px 0 10px 0;
-    background: #DD131A;
+    background: #dd131a;
 }
 
 .foot-lnk {
@@ -142,17 +146,22 @@ a {
     margin-top: -20px;
 }
 
-.registred {
+.notyet {
     text-align: center;
     color: white;
     font-size: 12px;
-    margin-top: -30px;
+    margin-top: -15px;
+}
+
+.notyet:hover {
+    text-decoration: underline;
+    color: white;
 }
 
 .button {
     padding: 10px 5px;
     border-radius: 20px;
-    border-color: #DD131A;
+    border-color: #dd131a;
 }
 
 #circle {
@@ -166,32 +175,36 @@ a {
     position: absolute;
 }
 
-.parent{
+.parent {
     display: table;
     width: 100%;
-    table-layout: fixed; 
+    table-layout: fixed;
 }
 
 #rectangleB {
     width: 120px;
-    height: 1000px;
-    background: #0E115A;
+    height: 1200px;
+    background: #0e115a;
     float: left;
     margin-left: -50px;
 }
 
 #rectangleW {
     width: 120px;
-    height: 1000px;
+    height: 1200px;
     background: #fff;
     float: left;
-
 }
 
 #rectangleR {
     width: 120px;
-    height: 1000px;
-    background: #DD131A;
+    height: 1200px;
+    background: #dd131a;
     float: left;
+}
 
+.hr {
+    height: 3px;
+    background: #dd131a;
+    margin-top: -15px;
 }

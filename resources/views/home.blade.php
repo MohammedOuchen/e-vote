@@ -33,7 +33,7 @@
                         <div class="input-group">
                             <select class="form-select" id="inputGroupSelect04"
                                 aria-label="Example select with button addon">
-                                <option selected>Choix d'élection</option>
+                                <option selected>Choose...</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
@@ -46,9 +46,9 @@
                                     <path
                                         d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
                                 </svg>
-                                Voir
-                            </button>
+                                Voir</button>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -56,7 +56,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 id="voter" class=" card-title"> <b> Voter sur un candidat </b></h5>
-                        <p class="card-text">Votre voix compte. Alors, pas une minute à perdre, votez dès maintenant !
+                        <p class="card-text">Votre voix compte. Alors, pas une minute à perdre, votez dès maintenant
+                            !
                         </p>
                         <a href="#" class="button button2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -68,13 +69,16 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
 
         <div class="card text-center">
 
             <div class="card-body">
                 <h5 id="voter" class="card-title"> <b> Le résultat </b> </h5>
-                <p class="card-text">Connaître les résultats des dernières élections ou consultations qui ont eu lieu.
+                <p class="card-text">Connaître les résultats des dernières élections ou consultations qui ont eu
+                    lieu.
                 </p>
                 <a href="#" class="button button3"><span> Voir le résultat </span></a>
             </div>
