@@ -16,10 +16,10 @@ don't forget to make your `.env` file with your app key and your database
 
 ## reset database
 
-***the parameters are not required***, erase the database, then recreate it and run the migration, add ```--seed``` to seed
+***the parameters are not required***, erase the database, then recreate it and run the migration, 
 ```
-php artisan db:reset {--seed}
-```
+php artisan migrate:fresh
+``
 php artisan optimize
 ````
 php artisan config:clear
