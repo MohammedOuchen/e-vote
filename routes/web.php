@@ -34,6 +34,10 @@ Route::get('/registerr', function () {
     return view('pages/registerr');
 });
 
+Route::get('/vote', function () {
+    return view('vote');
+});
+
 
 Auth::routes();
 
