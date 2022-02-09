@@ -49,6 +49,7 @@ a {
     padding: 90px 70px 50px 70px;
     background: #0E115A;
     border-radius: 20px;
+    height: auto;
 }
 
 .login-html .sign-in,

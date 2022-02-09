@@ -56,7 +56,11 @@
                             @enderror
                         </div>
                         <div class="foot-lnk">
-                            <a href="#forgot">Mot de passe oublié ?</a>
+                                @if (Route::has('password.request'))
+                                    <a href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
                         </div>
 
                         <div class="hr"></div>

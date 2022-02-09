@@ -25,12 +25,12 @@
 
 <body>
     <header>
-        <img class="logoImg" src="{{ asset('Pictures/logo.png') }}" width="200" height="100">
+    <a href="{{ route('home') }}"><img  class="logoImg" src="{{ asset('Pictures/logo.png') }}" width="200" height="100"></a>
         <nav>
             <ul class="linksnav">
-                <li><a href=" #">Acceuil</a></li>
-                <li><a href="#">Actualité</a></li>
-                <li><a href="#">Se Connecter</a></li>
+                <li><a href="{{ route('home') }}">Acceuil</a></li>
+                <li><a href="https://www.service-public.fr/particuliers/vosdroits/N47">Actualité</a></li>
+                <li><a href="{{ route('loginn') }}">Se Connecter</a></li>
             </ul>
         </nav>
     </header>
