@@ -26,6 +26,10 @@ Route::get('/loginn', function () {
     return view('loginn');
 });
 
+Route::get('/registerr', function () {
+    return view('pages/registerr');
+});
+
 
 Auth::routes();
 
