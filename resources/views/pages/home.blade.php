@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.home')
 
-<head>
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/home.css') }}" />
-</head>
+@section('content')
 
-<body>
-    <header>
-        <img src="">
-        <nav>
-            <ul>
-                <li><a href="#">Acceuil</a></li>
-                <li><a href="#">Actualité</a></li>
-                <li><a href="#">Se Connecter</a></li>
-            </ul>
-        </nav>
-    </header>
     <img class="mainImg" src="{{ asset('Pictures/HomePagePicture.png') }}" width="409" height="451">
     <div class="buttons">
         <button>Voter
@@ -55,6 +41,4 @@
         </p>
     </div>
     <button class="InscButton">S'inscrire maintenant !</button>
-</body>
-
-</html>
+@endsection
