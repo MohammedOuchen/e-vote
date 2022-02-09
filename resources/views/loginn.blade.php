@@ -105,11 +105,13 @@
     }
 
     .login-form .group .input,
-    .login-form .group .button {
-        border: none;
-        padding: 15px 20px;
-        border-radius: 25px #fff;
+    .login-form .group {
+        padding: 8px;
+        padding-left: 10px;
+        border-radius: 20px;
         background: #0E115A;
+        border-color: white;
+
     }
 
     .login-form .group input[data-type="password"] {
@@ -130,7 +132,6 @@
         height: 2px;
         margin: 60px 0 50px 0;
         background: #DD131A;
-        ;
     }
 
     .foot-lnk {
@@ -145,12 +146,29 @@
         text-align: center;
         color: white;
         font-size: 12px;
+        margin-top: -30px;
+    }
+
+    .button {
+        padding: 10px 5px;
+        border-radius: 20px;
+        border-color: #DD131A;
+    }
+
+    #circle {
+        background: #DD131A;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-left: 1070px;
+        margin-top: 90px;
     }
     </style>
 
 </head>
 
 <body>
+    <div id="circle"></div>
     <div class="login-wrap">
         <div class="login-html">
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
