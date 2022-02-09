@@ -58,7 +58,7 @@ header li a:hover {
 
 .buttons {
     float: right;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .mainImg {
@@ -94,7 +94,7 @@ button img {
     font-weight: bold;
     color: #0e115a;
     margin-top: 200px;
-    margin-left: 400px;
+    margin-left: 450px;
     z-index: 1;
 }
 
@@ -102,23 +102,32 @@ button img {
     font: 25px "Open Sans", sans-serif;
     font-weight: bold;
     color: black;
-    margin-left: 450px;
+    margin-left: 480px;
     z-index: 1;
+    margin-top: 50px;
 }
 
 .text p {
     font: 20px "Open Sans", sans-serif;
     color: black;
-    margin-left: 490px;
+    margin-left: 550px;
     text-align: justify;
     margin-top: 15px;
     z-index: 1;
+    margin-top: 20px;
+    margin-right: 150px;
 }
 
 .InscButton {
-    margin-left: 420px;
+    margin-left: 500px;
     margin-top: 25px;
-    font: 20px "Open Sans", sans-serif;
+    font: 18px "Open Sans", sans-serif;
+    border: 2px solid #dd131a;
+}
+
+.InscButton:hover {
+    background-color: white;
+    color: #dd131a;
 }
 
 .container {
@@ -221,4 +230,90 @@ h5 {
 
 .form-select {
     min-width: 20px;
+}
+
+.buttonHome {
+    background-color: #dd131a;
+    color: white;
+    border: 2px solid #dd131a;
+    text-align: center;
+    padding: 15px 32px;
+    font: 20px "Open Sans", sans-serif;
+}
+
+.buttonHome:hover {
+    background-color: white;
+    color: #dd131a;
+}
+
+.divs {
+    display: flex;
+    margin-top: 150px;
+}
+
+.divs>div {
+    flex: 1;
+    margin: 30px;
+    margin-left: 50px;
+    max-width: 100%;
+    max-height: 100%;
+    width: 500px;
+}
+
+#redone {
+    background-color: #dd131a;
+    color: #fff;
+    padding: 30px;
+}
+
+.card-title {
+    color: #fff;
+}
+
+#blueone {
+    background-color: #0e115a;
+    color: #fff;
+}
+
+#whiteone {
+    color: #0e115a;
+}
+
+.buttonC {
+    background-color: white;
+    color: black;
+    border: 2px solid #0e115a;
+}
+
+.buttonC:hover {
+    opacity: 1;
+    right: 0;
+    color: white;
+    background-color: #dd131a;
+}
+
+.buttonV {
+    background-color: white;
+    color: black;
+    border: 2px solid #dd131a;
+}
+
+.buttonV:hover {
+    opacity: 1;
+    right: 0;
+    color: white;
+    background-color: #0e115a;
+}
+
+blockquote {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 100px;
+    padding: 50px;
+    color: #0e115a;
+}
+
+.textdeco {
+    text-decoration: underline;
+    color: #dd131a;
 }
