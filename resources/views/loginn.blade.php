@@ -20,11 +20,6 @@
         font: 600 16px/18px 'Open Sans', sans-serif;
     }
 
-    html,
-    body {
-        overflow: hidden;
-    }
-
     *,
     :after,
     :before {
