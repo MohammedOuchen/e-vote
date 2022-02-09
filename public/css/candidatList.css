@@ -1,0 +1,14 @@
+.card{
+    margin-top:70px;
+    width: 250px; /* Using this as an example, you can keep 20rem */
+    overflow: hidden; /* Optional */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 230px;
+}
+
+.card-title{
+    margin-top:0px;
+}

@@ -1,4 +1,4 @@
-
+@extends('layouts.home')
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -19,16 +19,6 @@
 </head>
 
 <body>
-    <header>
-        <img src="">
-        <nav>
-            <ul>
-                <li><a href="#">Acceuil</a></li>
-                <li><a href="#">Actualité</a></li>
-                <li><a href="#">Se Connecter</a></li>
-            </ul>
-        </nav>
-    </header>
 
     <div id="circle"></div>
     <div id="rectangleB"></div>
@@ -46,6 +36,14 @@
                     <form>
                         <div class="form-group">
 
+                            <div class="group">
+                            <select class="form-select" aria-label="Default select example" placeholder="Choisissez ...">
+                                <option selected>Voter</option>
+                                <option value="1">Candidater</option>
+                            </select>
+                            <small id="choice" class="form-text text-muted">Vous voulez voter ou candidater</small>
+                            </div>
+  
                             <div class="group">
                                 <label for="voterPrenom" class="voterPrenom">Prénom</label>
                                 <input id="voterPrenom" type="text" class="input">

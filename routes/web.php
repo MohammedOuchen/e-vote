@@ -26,6 +26,10 @@ Route::get('/loginn', function () {
     return view('loginn');
 });
 
+Route::get('/candidatList', function () {
+    return view('pages/Voters/candidatList');
+});
+
 Route::get('/registerr', function () {
     return view('pages/registerr');
 });
