@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateElectionsTable extends Migration
@@ -17,7 +18,7 @@ class CreateElectionsTable extends Migration
             $table->id();
             $table->enum('type', ['pre', 'mairie']);
             $table->timestamp('startDate');
-            $table->timestamp('endDate');
+            $table->timestamp('endDate')->default(DB::raw('CURRENT_TIMESTAMP'));;
             $table->string('winner');
             $table->timestamps();
         });
