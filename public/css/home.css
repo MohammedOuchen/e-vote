@@ -160,6 +160,7 @@ h5 {
     color: white;
     border: 2px solid #0e115a;
     text-align: center;
+    margin-top: 3px;
 }
 
 .button1:hover {
@@ -216,4 +217,8 @@ h5 {
     opacity: 1;
     right: 0;
     color: white;
+}
+
+.form-select {
+    min-width: 20px;
 }

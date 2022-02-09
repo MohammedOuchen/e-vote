@@ -11,7 +11,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/home.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/register.css') }}" />
-    <title>register page</title>
+    <title>Inscription</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -26,12 +26,13 @@
     <div id="rectangleW"></div>
     <div id="rectangleR"></div>
 
-    <div class="register-wrap">
+    <div class="register-wrap" style="scroll-behavior: auto;">
         <div class="register-html">
-        
+            <form method="POST">
                 <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
-                    class="tab">S'INSCRIRE</label>
+                    class="tab">INSCRIPTION</label>
                 <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+                <div class="hr"></div>
                 <div class="register-form">
                     <div class="sign-in-htm">
                     <form>
@@ -67,6 +68,7 @@
                                     </span>
                                 @enderror
                             </div>
+                        </div>
 
                             <div class="group">
                                 <label for="voterNom" class="voterNom">Nom</label>
@@ -137,9 +139,12 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                        <div class="notyet">
+                            <a class="notyet" href="">Pas encore inscrit ?</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </body>
