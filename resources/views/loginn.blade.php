@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/home.css') }}" />
     <title>Login page</title>
 
     <!-- Fonts -->
@@ -42,15 +42,16 @@
     }
 
     .login-wrap {
-        width: 100%;
+        width: 50%;
         margin: auto;
-        margin-top: -30px;
-        margin-right: 150px;
+        margin-top: 100px;
+        margin-right: 50px;
+        margin-left: 650px;
         max-width: 525px;
-        min-height: 670px;
-        position: relative;
+        min-height: 570px;
+        position: absolute;
         box-shadow: #0E115A;
-        z-index: -1;
+        z-index: 0;
         margin-bottom: 20px;
     }
 
@@ -73,6 +74,7 @@
     .login-form .group .label,
     .login-form .group .button {
         text-transform: uppercase;
+        margin: 5px 5px 5px 5px;
     }
 
     .login-html .tab {
@@ -103,6 +105,7 @@
         width: 100%;
         color: #fff;
         display: block;
+        margin: 5px 5px 5px 5px;
     }
 
     .login-form .group .input,
@@ -123,6 +126,7 @@
     .login-form .group .label {
         color: white;
         font-size: 12px;
+        margin: 5px 5px 5px 5px;
     }
 
     .login-form .group .button {
@@ -131,7 +135,7 @@
 
     .hr {
         height: 2px;
-        margin: 60px 0 50px 0;
+        margin: 20px 0 10px 0;
         background: #DD131A;
     }
 
@@ -161,14 +165,27 @@
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        margin-top: 200px;
-        margin-left: 1080px;
+        margin-top: 70px;
+        margin-left: 880px;
+        z-index: 1;
+        position: absolute;
     }
     </style>
 
 </head>
 
 <body>
+    <header>
+        <img src="">
+        <nav>
+            <ul>
+                <li><a href="#">Acceuil</a></li>
+                <li><a href="#">Actualité</a></li>
+                <li><a href="#">Se Connecter</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div id="circle"></div>
 
     <div class="login-wrap">
