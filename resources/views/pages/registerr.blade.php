@@ -40,16 +40,16 @@
                         <div class="form-group">
 
                             <div class="group">
-                            <select id="ifYes" class="form-select" aria-label="Default select example" placeholder="Choisissez ..." required>
+                            <select onchange="yesnoCheck(this);" class="form-select" aria-label="Default select example" placeholder="Choisissez ..." required>
                                 <option disabled selected value default> -- select an option -- </option>    
-                                <option selected>Voter</option>
-                                <option value="1">Candidater</option>
+                                <option value="Candidater" selected>Candidater</option>
+                                <option value="Voter">Voter</option>
                             </select>
                             <small id="mainChoice" class="form-text text-muted">Vous voulez voter ou candidater</small>
                             </div>
 
-                            <div class="group">
-                            <select onchange="yesnoCheck(this);" class="form-select" aria-label="Default select example" placeholder="Choisissez ...">
+                            <div id="ifYes" class="group">
+                            <select class="form-select" aria-label="Default select example" placeholder="Choisissez ...">
                                 <option selected>Elections municipales</option>
                                 <option value="1">Elections départementales</option>
                                 <option value="2">Elections régionales</option>
@@ -139,24 +139,22 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="notyet">
-                            <a class="notyet" href="">Pas encore inscrit ?</a>
-                        </div>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </body>
+
 <script type="text/javascript">
 function yesnoCheck(that) {
-    if (that.value == "other") {
-  alert("check");
-        document.getElementById("ifYes").style.display = "block";
-    } else {
+    if (that.value == "Voter") {
         document.getElementById("ifYes").style.display = "none";
+    } else {
+        document.getElementById("ifYes").style.display = "block";
     }
 }
+
 </script>
 
 </html>
