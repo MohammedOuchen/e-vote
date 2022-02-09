@@ -44,8 +44,16 @@ header li {
 header li a {
     color: white;
     text-decoration: none;
-    font-family: "Poppins";
     font: 20px "Open Sans", sans-serif;
+}
+
+.linksnav {
+    margin-top: 18px;
+}
+
+header li a:hover {
+    text-decoration: underline;
+    color: white;
 }
 
 .buttons {
@@ -111,4 +119,101 @@ button img {
     margin-left: 420px;
     margin-top: 25px;
     font: 20px "Open Sans", sans-serif;
+}
+
+.container {
+    margin-top: 80px;
+}
+
+h2 {
+    text-align: center;
+    color: #0e115a;
+}
+
+h5 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.card-text {
+    text-align: center;
+}
+
+.button {
+    background-color: #0e115a;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.button1 {
+    background-color: #0e115a;
+    color: white;
+    border: 2px solid #0e115a;
+    text-align: center;
+}
+
+.button1:hover {
+    background-color: white;
+    color: #0e115a;
+}
+
+.button2 {
+    background-color: #dd131a;
+    color: white;
+    border: 2px solid #dd131a;
+    text-align: center;
+}
+
+.button2:hover {
+    background-color: white;
+    color: #dd131a;
+}
+
+.row {
+    margin-bottom: 30px;
+}
+
+#liste {
+    color: #0e115a;
+}
+
+#voter {
+    color: #dd131a;
+}
+
+.button3 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button3 span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button3:hover span {
+    padding-right: 25px;
+    color: white;
+}
+
+.button3:hover span:after {
+    opacity: 1;
+    right: 0;
+    color: white;
 }
