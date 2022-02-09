@@ -14,6 +14,18 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(50)->create();
+        for ($i=0; $i < 100; $i++) {
+
+            $user = User::factory()->create();
+             // Adding permissions via a role
+             $user->assignRole('voter');
+
+        }
+
+        $admin = User::factory()->create([
+            'email' => 'admin@e-vote.com'
+        ]);
+
+        $admin->assignRole('admin');
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages/home');
 });
+
+
+Route::resource('/admin', UserController::class)->only('index');
+
+
 
 Route::get('/loginn', function () {
     return view('loginn');
