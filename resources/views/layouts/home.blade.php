@@ -22,7 +22,7 @@
 </head>
 <body>
     <header>
-        <img src="">
+        <img class="logoImg" src="{{ asset('Pictures/logo.png') }}" width="200" height="100">
         <nav>
             <ul>
                 <li><a href="#">Acceuil</a></li>
