@@ -1,0 +1,110 @@
+header img {
+    height: 80px;
+    margin-left: 40px;
+}
+
+body {
+    height: 125vh;
+    background-color: whitesmoke;
+    font-family: "Open Sans", sans-serif;
+    margin-top: 20px;
+    padding: 30px;
+    overflow: hidden;
+}
+
+header {
+    background-color: #0e115a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+    z-index: 2;
+}
+
+header * {
+    display: inline;
+}
+
+header nav {
+    flex-grow: 1;
+    margin: 55px;
+}
+
+header nav ul {
+    float: right;
+}
+
+header li {
+    margin: 15px;
+}
+
+header li a {
+    color: white;
+    text-decoration: none;
+    font-family: "Poppins";
+    font: 20px "Open Sans", sans-serif;
+}
+
+.buttons {
+    float: right;
+    margin-top: 50px;
+}
+
+.mainImg {
+    position: absolute;
+    z-index: 0;
+    margin-left: 30px;
+}
+
+button {
+    background-color: #dd131a;
+    border: none;
+    color: white;
+    padding: 15px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font: 20px "Open Sans", sans-serif;
+    border-radius: 10px;
+}
+
+button img {
+    margin-left: 10px;
+    height: 18px;
+}
+
+.title h1 {
+    font: 55px "Open Sans", sans-serif;
+    font-weight: bold;
+    color: #0e115a;
+    margin-top: 230px;
+    margin-left: 400px;
+    z-index: 1;
+}
+
+.subtitle h3 {
+    font: 25px "Open Sans", sans-serif;
+    font-weight: bold;
+    color: black;
+    margin-left: 450px;
+    z-index: 1;
+}
+
+.text p {
+    font: 20px "Open Sans", sans-serif;
+    color: black;
+    margin-left: 490px;
+    text-align: justify;
+    margin-top: -15px;
+    z-index: 1;
+}
+
+.InscButton {
+    margin-left: 420px;
+    margin-top: 25px;
+    font: 20px "Open Sans", sans-serif;
+}
