@@ -35,12 +35,12 @@
                 <div class="hr"></div>
                 <div class="register-form">
                     <div class="sign-in-htm">
-                    <form>
+                    <form method="POST" action="{{ route('registerr') }}">
                     @csrf
                         <div class="form-group">
 
                             <div class="group">
-                            <select onchange="yesnoCheck(this);" class="form-select" aria-label="Default select example" placeholder="Choisissez ..." required>
+                            <select onchange="yesnoCheck(this);" id="choice" class="form-select" aria-label="Default select example" placeholder="Choisissez ..." required>
                                 <option disabled selected value default> -- select an option -- </option>    
                                 <option value="Candidater" selected>Candidater</option>
                                 <option value="Voter">Voter</option>
@@ -60,7 +60,7 @@
   
                             <div class="group">
                                 <label for="voterPrenom" class="voterPrenom">Prénom</label>
-                                <input id="voterPrenom" type="text" class="form-control @error('name') is-invalid @enderror" name="voterPrenom" value="{{ old('voterPrenom') }}" required autocomplete="name" autofocus>
+                                <input id="voterPrenom" type="text" class="form-control @error('voterPrenom') is-invalid @enderror" name="voterPrenom" value="{{ old('voterPrenom') }}" required autocomplete="name" autofocus>
 
                                 @error('voterPrenom')
                                     <span class="invalid-feedback" role="alert">
