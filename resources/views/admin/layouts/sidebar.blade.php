@@ -15,6 +15,12 @@
                         <span class="sidebar-menu-text">Condidat</span>
                     </a>
                 </li>
+                <li class="sidebar-menu-item ">
+                    <a class="sidebar-menu-button" href="{{ route('admin-election.index') }}">
+                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">people</i>
+                        <span class="sidebar-menu-text">Election</span>
+                    </a>
+                </li>
 
                 </li>
             </ul>

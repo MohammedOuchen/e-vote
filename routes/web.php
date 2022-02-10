@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CondidateController;
+use App\Http\Controllers\Admin\ElectionController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VoterController;
 use Illuminate\Support\Facades\Auth;
@@ -44,6 +45,8 @@ Route::get('/registerr', function () {
     Route::resource('/admin', UserController::class)->only('index');
     Route::resource('/admin-vote', VoterController::class)->only('index');
     Route::resource('/admin-condidate', CondidateController::class)->only('index');
+    Route::resource('/admin-election', ElectionController::class)->only('index', 'create');
+
 // });
 
 Auth::routes();
