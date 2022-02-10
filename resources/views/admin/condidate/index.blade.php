@@ -10,6 +10,7 @@
         <th scope="col">#</th>
         <th scope="col">Nom et Prénom </th>
         <th scope="col">numero carte nationale </th>
+        <th scope="col">Type </th>
         <th scope="col">Active</th>
         <th scope="col">Action</th>
       </tr>
@@ -21,6 +22,7 @@
                 <th scope="row">{{ $request->id }}</th>
                 <td>{{ $request->user->full_name }}</td>
                 <td>{{ $request->user->num_carte_national }}</td>
+                <td>{{ $request->type }}</td>
                 <td>{{ $request->status }}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">

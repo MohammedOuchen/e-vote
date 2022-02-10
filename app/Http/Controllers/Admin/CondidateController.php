@@ -7,6 +7,7 @@ use App\Models\Candidate;
 use App\Models\Election;
 use App\Models\Request as ModelsRequest;
 use App\Models\User;
+use App\Models\Voter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
@@ -57,7 +58,7 @@ class CondidateController extends Controller
                         ->first();
 
 
-        if($election->count() == 0){
+        if(!$election){
 
             $request->session()->flash('error', 'Error ! Add new election !!');
 
@@ -94,8 +95,7 @@ class CondidateController extends Controller
                          ->where('active', 1)
                          ->first();
 
-
-        if($election->count() == 0){
+        if(!$election){
 
         $request->session()->flash('error', 'Error ! Add new election !!');
 
@@ -161,5 +161,8 @@ class CondidateController extends Controller
     public function destroy($id)
     {
 
+
     }
 }
+
+ //
