@@ -55,9 +55,10 @@ Route::get('/dashboardU', function () {
 Route::middleware(['auth', 'role:admin'])->group(function () {
 
     Route::resource('/admin', UserController::class)->only('index');
-    Route::resource('/admin-vote', VoterController::class)->only('index');
-    Route::resource('/admin-condidate', CondidateController::class)->only('index','store','delete');
+    Route::resource('/admin-vote', VoterController::class)->only('index', 'store');
+    Route::resource('/admin-condidate', CondidateController::class)->only('index','store');
     Route::post('/admin-condidate-status', [CondidateController::class, 'setStatus'])->name('admin-condidate.status');
+    Route::post('/admin-voter-status', [VoterController::class, 'setStatus'])->name('admin-voter.status');
     Route::resource('/admin-election', ElectionController::class)->only('index', 'create', 'store');
 
 });
