@@ -1,4 +1,4 @@
-@extends('layouts.account')
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +13,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/vote.css') }}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Styles -->
 
     <!-- Fonts -->
@@ -27,7 +28,7 @@
             <div class="alltable">
                 <div class="input-group">
                     <span class="input-group-text">FILTRER</span>
-                    <input type="text" id="myInput" onkeyup="myFunction()" title="Type in a name"
+                    <input name="filter" type="text" id="myInput" onkeyup="myFunction()" title="Type in a name"
                         placeholder="Rechercher les noms" class="form-control">
                 </div>
                 <table id="myTable" class="table table-striped table-hover">
@@ -42,23 +43,55 @@
                         <tr>
                             <td>John</td>
                             <td>Doe</td>
-                            <td><button type="button" class="btn btn-outline-danger">Voter</button></td>
+                            <td>
+                                <!-- <button type="button" class="btn btn-outline-danger">Voter</button> -->
+                                <!-- Button trigger modal -->
+                                <button name="VoteButton" type="button" class="btn btn-outline-danger" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#exampleModalCenter">
+                                Voter
+                                </button>
+                            </td>
                         </tr>
                         <tr>
                             <td>Mary</td>
                             <td>Moe</td>
-                            <td><button type="button" class="btn btn-outline-danger">Voter</button></td>
+                            <td><button name="VoteButton" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalCenter">Voter</button></td>
                         </tr>
                         <tr>
                             <td>July</td>
                             <td>Dooley</td>
-                            <td><button type="button" class="btn btn-outline-danger">Voter</button></td>
+                            <td><button name="VoteButton" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalCenter">Voter</button></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+
+    <!-- Modal
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Confirmer votre vote</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </>
+                        </div>
+                        <div class="modal-body">
+                            êtes-vous sûr de vouloir voter pour ce candidat ?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                            <button type="button" class="btn btn-primary" onclick="DisableFunction()">Confirmer</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+
 </body>
 <script>
 function myFunction() {
@@ -79,6 +112,22 @@ function myFunction() {
         }
     }
 }
+
+// function DisableFunction(){
+//     //var buttons = document.getElementById("VoteButton").disabled = true;
+//     var elems = document.getElementsByName("VoteButton");
+//     // console.log(elems);
+//     // var elems = document.querySelectorAll('[name="VoteButton"]');
+
+//     for (var i = 0; i < elems.length; i++) {
+//         elems[0].disabled = true;
+//     }
+//     $('#exampleModalCenter').modal('hide');
+//     // //$('#exampleModalCenter').modal({backdrop: 'static', keyboard: false})  
+//     // $(document.body).removeClass("modal-open");
+//     // $(".modal-backdrop").remove();
+// }
+
 </script>
 
 </html>

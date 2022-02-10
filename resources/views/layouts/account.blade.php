@@ -11,7 +11,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
 
@@ -28,7 +27,7 @@
     <a href="{{ route('vote') }}"><img class="logoImg" src="{{ asset('Pictures/logo.png') }}" width="200" height="100"></a>
         <nav>
             <ul class="linksnav">
-                <li><a href="{{ route('vote') }}">Acceuil</a></li>
+                <li><a href="{{ route('dashboardU') }}">Acceuil</a></li>
                 <li><a href="https://www.service-public.fr/particuliers/vosdroits/N47">Actualité</a></li>
                 <li><a href="{{ route('homee') }}">Se Déconnecter</a></li>
             </ul>
