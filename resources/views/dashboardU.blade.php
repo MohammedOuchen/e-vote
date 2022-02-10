@@ -38,7 +38,7 @@
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                             </select>
-                            <button class="button button1" type="button">
+                            <a href="{{ route('vote') }}" class="button button1" type="button">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-card-list" viewBox="0 0 16 16">
                                     <path
@@ -46,7 +46,7 @@
                                     <path
                                         d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
                                 </svg>
-                                Voir</button>
+                                Voir</a>
                         </div>
 
                     </div>
@@ -59,7 +59,7 @@
                         <p class="card-text">Votre voix compte. Alors, pas une minute à perdre, votez dès maintenant
                             !
                         </p>
-                        <a href="#" class="button button2">
+                        <a href="{{ route('candidatList') }}" class="button button2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-check-square-fill" viewBox="0 0 16 16">
                                 <path
@@ -80,7 +80,7 @@
                 <p class="card-text">Connaître les résultats des dernières élections ou consultations qui ont eu
                     lieu.
                 </p>
-                <a href="#" class="button button3"><span> Voir le résultat </span></a>
+                <a href="{{ route('resultat') }}" class="button button3"><span> Voir le résultat </span></a>
             </div>
             <div class="card-footer text-muted">
                 Dans 2 jours

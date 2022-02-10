@@ -40,7 +40,11 @@ Route::get('/vote', function () {
 
 Route::get('/resultat', function () {
     return view('resultat');
-});
+})->name('resultat');
+
+Route::get('/dashboardU', function () {
+    return view('dashboardU');
+})->name('dashboardU');
 
 
 
