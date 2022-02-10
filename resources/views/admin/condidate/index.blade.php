@@ -24,12 +24,22 @@
                 <td>{{ $request->status }}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                        <form action="{{route('admin-condidate.store') }}" method="post">
-                            @csrf
-                            <input type="hidden" name="request_id" value="{{ $request->id }}">
-                            <button type="submit" class="btn btn-success">Valider</button>
-                        </form>
-                        <button type="button" class="btn btn-danger">Annuler</button>
+                        @if ($request->status != 'VALIDATE')
+                                <form action="{{route('admin-condidate.store') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="request_id" value="{{ $request->id }}">
+                                    <button type="submit" class="btn btn-success">Valider</button>
+                                </form>
+                        @endif
+                        @if ($request->status != 'NOT_VALIDATE')
+                                <form action="{{route('admin-condidate.status') }}" method="post">
+
+                                    @csrf
+                                    <input type="hidden" name="request_id" value="{{ $request->id }}">
+                                    <button type="submit" class="btn btn-danger">Annuler</button>
+                                </form>
+                        @endif
+
                         <button type="button" class="btn btn-warning">Voir Plus</button>
                       </div>
                 </td>

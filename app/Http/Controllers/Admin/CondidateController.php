@@ -55,7 +55,10 @@ class CondidateController extends Controller
        $election =Election::where('type', $requestModel->type)
                         ->where('active', 1)
                         ->first();
-        if(!$election->count()){
+
+
+        if($election->count() == 0){
+
             $request->session()->flash('error', 'Error ! Add new election !!');
 
         }else{
@@ -72,11 +75,49 @@ class CondidateController extends Controller
                     'election_id' => $election->id
             ]);
 
+            $request->session()->flash('status', 'Enregistrer');
         }
 
        return redirect()->back();
     }
 
+  /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function setStatus(Request $request)
+    {
+        $requestModel = ModelsRequest::findorFail($request['request_id']);
+        $election =Election::where('type', $requestModel->type)
+                         ->where('active', 1)
+                         ->first();
+
+
+        if($election->count() == 0){
+
+        $request->session()->flash('error', 'Error ! Add new election !!');
+
+        }else{
+
+        $requestModel->status = 'NOT_VALIDATE';
+        $requestModel->save();
+        $user = User::findorFail($requestModel->user_id);
+        $user->isconfirmed = false;
+        $user->save();
+
+        // $condidate = Candidate::create([
+        //         'active' => true,
+        //         'request_id' => $requestModel->id,
+        //         'election_id' => $election->id
+        // ]);
+
+        $request->session()->flash('status', 'Enregistrer');
+        }
+
+        return redirect()->back();
+    }
     /**
      * Display the specified resource.
      *
@@ -119,6 +160,6 @@ class CondidateController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }
