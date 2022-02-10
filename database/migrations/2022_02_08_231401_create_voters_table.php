@@ -15,10 +15,11 @@ class CreateVotersTable extends Migration
     {
         Schema::create('voters', function (Blueprint $table) {
             $table->id();
-            $table->string('years');
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')
-                    ->on('users')->onDelete('cascade');
+            $table->string('years')->nullable();
+            $table->boolean('active');
+            $table->unsignedBigInteger('request_id')->nullable();
+            $table->foreign('request_id')->references('id')
+                    ->on('requests')->onDelete('cascade');
             $table->timestamps();
         });
     }

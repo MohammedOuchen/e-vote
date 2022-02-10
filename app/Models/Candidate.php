@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Candidate extends Model
 {
     use HasFactory;
+
+        /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'active'
+    ];
+
+
+    public function election() {
+
+        return  $this->belongsTo(Election::class);
+    }
 }

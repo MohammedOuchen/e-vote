@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Candidate;
+use App\Models\Election;
 use App\Models\Request as ModelsRequest;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
@@ -17,7 +20,7 @@ class CondidateController extends Controller
     public function index()
     {
            // $voters = User::role('voter')
-           $requests = ModelsRequest::whereStatus('IN_PROGRESS')
+           $requests = ModelsRequest::query()
                             ->with('user')
                             ->whereHas('user', function (Builder $query) {
                                 $query->Role('condidate');
@@ -25,7 +28,7 @@ class CondidateController extends Controller
                             ->get();
             // dd($requests);
             return view('admin.condidate.index',[
-            'requests' => $requests
+                  'requests' => $requests
             ]);
     }
 
@@ -47,9 +50,74 @@ class CondidateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+       $requestModel = ModelsRequest::findorFail($request['request_id']);
+       $election =Election::where('type', $requestModel->type)
+                        ->where('active', 1)
+                        ->first();
+
+
+        if($election->count() == 0){
+
+            $request->session()->flash('error', 'Error ! Add new election !!');
+
+        }else{
+
+            $requestModel->status = 'VALIDATE';
+            $requestModel->save();
+            $user = User::findorFail($requestModel->user_id);
+            $user->isconfirmed = true;
+            $user->save();
+
+            $condidate = Candidate::create([
+                    'active' => true,
+                    'request_id' => $requestModel->id,
+                    'election_id' => $election->id
+            ]);
+
+            $request->session()->flash('status', 'Enregistrer');
+        }
+
+       return redirect()->back();
     }
 
+  /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function setStatus(Request $request)
+    {
+        $requestModel = ModelsRequest::findorFail($request['request_id']);
+        $election =Election::where('type', $requestModel->type)
+                         ->where('active', 1)
+                         ->first();
+
+
+        if($election->count() == 0){
+
+        $request->session()->flash('error', 'Error ! Add new election !!');
+
+        }else{
+
+        $requestModel->status = 'NOT_VALIDATE';
+        $requestModel->save();
+        $user = User::findorFail($requestModel->user_id);
+        $user->isconfirmed = false;
+        $user->save();
+
+        // $condidate = Candidate::create([
+        //         'active' => true,
+        //         'request_id' => $requestModel->id,
+        //         'election_id' => $election->id
+        // ]);
+
+        $request->session()->flash('status', 'Enregistrer');
+        }
+
+        return redirect()->back();
+    }
     /**
      * Display the specified resource.
      *
@@ -92,6 +160,6 @@ class CondidateController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }

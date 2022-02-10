@@ -30,6 +30,8 @@
 </head>
 
 <body class="layout-default">
+
+
     <div class="mdk-header-layout js-mdk-header-layout">
 
         @include('admin.layouts.header')
@@ -59,7 +61,21 @@
                         </div>
                     </div>
                     <div class="container-fluid page__container">
+
+                        @if (session()->has('error'))
+                            <h3 style="color:crimson">
+                                    {{  session()->get('error')}}
+                            </h3>
+                        @endif
+
+                        @if (session()->has('status'))
+                            <h3 style="color:green">
+                                    {{  session()->get('status')}}
+                            </h3>
+                        @endif
+
                         @yield('content')
+
                     </div>
 
                 </div>
