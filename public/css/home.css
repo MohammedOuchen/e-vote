@@ -44,19 +44,32 @@ header li {
 header li a {
     color: white;
     text-decoration: none;
-    font-family: "Poppins";
     font: 20px "Open Sans", sans-serif;
+}
+
+.linksnav {
+    margin-top: 18px;
+}
+
+header li a:hover {
+    text-decoration: underline;
+    color: white;
 }
 
 .buttons {
     float: right;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .mainImg {
     position: absolute;
     z-index: 0;
     margin-left: 30px;
+    margin-top: 150px;
+}
+
+.logoImg {
+    float: left;
 }
 
 button {
@@ -80,8 +93,8 @@ button img {
     font: 55px "Open Sans", sans-serif;
     font-weight: bold;
     color: #0e115a;
-    margin-top: 230px;
-    margin-left: 400px;
+    margin-top: 200px;
+    margin-left: 450px;
     z-index: 1;
 }
 
@@ -89,21 +102,225 @@ button img {
     font: 25px "Open Sans", sans-serif;
     font-weight: bold;
     color: black;
-    margin-left: 450px;
+    margin-left: 480px;
     z-index: 1;
+    margin-top: 50px;
 }
 
 .text p {
     font: 20px "Open Sans", sans-serif;
     color: black;
-    margin-left: 490px;
+    margin-left: 550px;
     text-align: justify;
-    margin-top: -15px;
+    margin-top: 15px;
     z-index: 1;
+    margin-top: 20px;
+    margin-right: 120px;
 }
 
 .InscButton {
-    margin-left: 420px;
+    margin-left: 500px;
     margin-top: 25px;
+    font: 18px "Open Sans", sans-serif;
+    background-color: #dd131a;
+    color: white;
+    border: 2px solid #dd131a;
+    text-align: center;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.InscButton:hover {
+    background-color: white;
+    color: #dd131a;
+}
+
+.container {
+    margin-top: 80px;
+}
+
+h2 {
+    text-align: center;
+    color: #0e115a;
+}
+
+h5 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.card-text {
+    text-align: center;
+}
+
+.button {
+    background-color: #0e115a;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.button1 {
+    background-color: #0e115a;
+    color: white;
+    border: 2px solid #0e115a;
+    text-align: center;
+    margin-top: 3px;
+}
+
+.button1:hover {
+    background-color: white;
+    color: #0e115a;
+}
+
+.button2 {
+    background-color: #dd131a;
+    color: white;
+    border: 2px solid #dd131a;
+    text-align: center;
+}
+
+.button2:hover {
+    background-color: white;
+    color: #dd131a;
+}
+
+.row {
+    margin-bottom: 30px;
+}
+
+#liste {
+    color: #0e115a;
+}
+
+#voter {
+    color: #dd131a;
+}
+
+.button3 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button3 span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button3:hover span {
+    padding-right: 25px;
+    color: white;
+}
+
+.button3:hover span:after {
+    opacity: 1;
+    right: 0;
+    color: white;
+}
+
+.form-select {
+    min-width: 20px;
+}
+
+.buttonHome {
+    background-color: #dd131a;
+    color: white;
+    border: 2px solid #dd131a;
+    text-align: center;
+    padding: 15px 32px;
     font: 20px "Open Sans", sans-serif;
+}
+
+.buttonHome:hover {
+    background-color: white;
+    color: #dd131a;
+}
+
+.divs {
+    display: flex;
+    margin-top: 150px;
+}
+
+.divs>div {
+    flex: 1;
+    margin: 30px;
+    margin-left: 50px;
+    max-width: 100%;
+    max-height: 100%;
+    width: 500px;
+}
+
+#redone {
+    background-color: #dd131a;
+    color: #fff;
+    padding: 30px;
+}
+
+.card-title {
+    color: #fff;
+}
+
+#blueone {
+    background-color: #0e115a;
+    color: #fff;
+}
+
+#whiteone {
+    color: #0e115a;
+}
+
+.buttonC {
+    background-color: white;
+    color: black;
+    border: 2px solid #0e115a;
+}
+
+.buttonC:hover {
+    opacity: 1;
+    right: 0;
+    color: white;
+    background-color: #dd131a;
+}
+
+.buttonV {
+    background-color: white;
+    color: black;
+    border: 2px solid #dd131a;
+}
+
+.buttonV:hover {
+    opacity: 1;
+    right: 0;
+    color: white;
+    background-color: #0e115a;
+}
+
+blockquote {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 100px;
+    padding: 50px;
+    color: #0e115a;
+}
+
+.textdeco {
+    text-decoration: underline;
+    color: #dd131a;
 }

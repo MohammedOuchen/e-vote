@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,24 +20,27 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/home.css') }}" />
 
 
+
 </head>
+
 <body>
     <header>
-        <img src="">
+    <a href="{{ route('homee') }}"><img  class="logoImg" src="{{ asset('Pictures/logo.png') }}" width="200" height="100"></a>
         <nav>
-            <ul>
-                <li><a href="#">Acceuil</a></li>
-                <li><a href="#">Actualité</a></li>
-                <li><a href="#">Se Connecter</a></li>
+            <ul class="linksnav">
+                <li><a href="{{ route('homee') }}">Acceuil</a></li>
+                <li><a href="https://www.service-public.fr/particuliers/vosdroits/N47">Actualité</a></li>
+                <li><a href="{{ route('loginn') }}">Se Connecter</a></li>
             </ul>
         </nav>
     </header>
 
 
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+    <main class="py-4">
+        @yield('content')
+    </main>
     </div>
 </body>
+
 </html>
