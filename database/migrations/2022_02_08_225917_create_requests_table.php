@@ -15,7 +15,7 @@ class CreateRequestsTable extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['vote', 'pre', 'mairie']);
+            $table->enum('type', ['VOTE', 'MUNICIPAL', 'DEPARTMENTAL', 'REGIONAL', 'LEGISLATIVE']);
             $table->enum('status', ['IN_PROGRESS', 'VALIDATE', 'NOT_VALIDATE']);
             $table->string('year')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
