@@ -20,7 +20,8 @@
 <body>
     @section('content')
     <div class="container">
-        <h2> <b> Bienvenue NOM dans votre espace de vote </b></h2>
+        <h2> <b> Bienvenue <span class="namered"> {{ Auth::user()->full_name }} </span> dans votre espace de vote </b>
+        </h2>
         <h5>Vous avez un vote à exprimer !</h5>
         <div class="row text-center">
             <div class="col-sm-6">

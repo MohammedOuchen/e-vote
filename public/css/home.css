@@ -470,3 +470,7 @@ input[type="radio"] {
     margin-left: -60px;
     margin-top: 60px;
 }
+
+.namered {
+    color: #dd131a;
+}
