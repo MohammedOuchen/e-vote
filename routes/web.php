@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\VoterController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,7 +25,7 @@ Route::get('/', function () {
 });
 
 
-Route::resource('/admin', UserController::class)->only('index');
+
 
 
 
@@ -36,6 +37,12 @@ Route::get('/registerr', function () {
     return view('pages/registerr');
 });
 
+//after login
+// Route::group(['middleware' => ['auth', 'role:admin'],], function () {
+
+    Route::resource('/admin', UserController::class)->only('index');
+    Route::resource('/admin-vote', VoterController::class)->only('index');
+// });
 
 Auth::routes();
 

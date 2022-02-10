@@ -24,6 +24,7 @@ class UserFactory extends Factory
             'password' => Hash::make("Password-1234"), // password
             'date_of_birth' => Carbon::parse($this->faker->dateTimeBetween('1970-01-01', '2000-12-31')),
             'telephone' => $this->faker->unique()->phoneNumber,
+            'num_carte_national' => $this->faker->randomNumber,
             'gender' => $this->faker->randomElement(['man', 'women']),
             'country' => $this->faker->country,
             'city' => $this->faker->city,

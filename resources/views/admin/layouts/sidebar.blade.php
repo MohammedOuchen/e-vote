@@ -4,7 +4,7 @@
             <div class="sidebar-heading">Admin</div>
             <ul class="sidebar-menu" id="components_menu">
                 <li class="sidebar-menu-item ">
-                    <a class="sidebar-menu-button" href="">
+                    <a class="sidebar-menu-button" href="{{ route('admin-vote.index') }}">
                         <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">people</i>
                         <span class="sidebar-menu-text">Voteur</span>
                     </a>

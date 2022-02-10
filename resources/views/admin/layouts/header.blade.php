@@ -58,7 +58,7 @@
                         <a href="#account_menu" class="nav-link dropdown-toggle" data-toggle="dropdown"
                             data-caret="false">
                             <span class="mr-1 d-flex-inline">
-                                <span class="text-light">hhhhhhh</span>
+                                <span class="text-light">{{ Auth::user()->full_name }}</span>
                             </span>
                         </a>
                         <div id="account_menu" class="dropdown-menu dropdown-menu-right">

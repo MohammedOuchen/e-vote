@@ -50,7 +50,18 @@ class User extends Authenticatable
     ];
 
     public function requests() {
-        $this->hasMany(Request::class);
+
+       return $this->hasMany(Request::class);
+    }
+
+     /**
+     * Get the user's full name.
+     *
+     * @return string
+     */
+    public function getFullNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
     }
 
 }
