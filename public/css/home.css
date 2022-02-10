@@ -474,3 +474,12 @@ input[type="radio"] {
 .namered {
     color: #dd131a;
 }
+
+.error_msg {
+    color: #dd131a;
+    margin-left: -90px;
+}
+
+#ifYes {
+    display: none;
+}

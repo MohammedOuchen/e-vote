@@ -1,5 +1,5 @@
 @extends('layouts.home')
-
+<title>Inscription</title>
 @section('content')
 
 <!DOCTYPE html>
@@ -45,9 +45,11 @@
 
                                 <div class="group wrapper">
                                     <input onchange="yesnoCheck(this);" value="Candidater" type="radio" name="select"
-                                        id="option-1" class="form-select" @if(old('select')) checked @endif>
+                                        id="option-1" class="form-select" @if(old('select')) checked @endif required>
+
                                     <input onchange="yesnoCheck(this);" value="Voter" type="radio" name="select"
-                                        id="option-2" @if(!old('select')) checked @endif>
+                                        id="option-2" @if(old('select')) checked @endif>
+
 
                                     <label for="option-1" id="opt" class="option option-1">
                                         <div class="dot"></div>
@@ -56,7 +58,7 @@
 
                                     <label for="option-2" id="opt" class="option option-2">
                                         <div class="dot"></div>
-                                        <span>Voter       </span>
+                                        <span>Voter </span>
                                     </label>
                                 </div>
 
@@ -86,9 +88,8 @@
                                 <div class="group">
                                     <label for="last_name" class="voterPrenom">Nom</label>
                                     <input id="last_name" type="text"
-                                        class="form-control @error('last_name') is-invalid @enderror"
-                                        name="last_name" value="{{ old('last_name') }}" required autocomplete="name"
-                                        autofocus>
+                                        class="form-control @error('last_name') is-invalid @enderror" name="last_name"
+                                        value="{{ old('last_name') }}" required autocomplete="name" autofocus>
 
                                     @error('last_name')
                                     <span class="invalid-feedback" role="alert">
@@ -115,8 +116,9 @@
                             <div class="group">
                                 <label for="num_carte_national" class="voterCIN">N° de carte national</label>
                                 <input id="num_carte_national" type="text"
-                                    class="form-control @error('num_carte_national') is-invalid @enderror" name="num_carte_national"
-                                    value="{{ old('num_carte_national') }}" required autocomplete="name" autofocus>
+                                    class="form-control @error('num_carte_national') is-invalid @enderror"
+                                    name="num_carte_national" value="{{ old('num_carte_national') }}" required
+                                    autocomplete="name" autofocus>
 
                                 @error('num_carte_national')
                                 <span class="invalid-feedback" role="alert">
@@ -160,7 +162,7 @@
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
+                                    <strong class="error_msg">{{ $message }}</strong>
                                 </span>
                                 @enderror
 
