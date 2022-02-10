@@ -38,6 +38,11 @@ Route::get('/vote', function () {
     return view('pages/Voters/vote');
 })->name('vote');
 
+Route::get('/resultat', function () {
+    return view('resultat');
+});
+
+
 
 Auth::routes();
 
