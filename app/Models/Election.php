@@ -9,8 +9,6 @@ class Election extends Model
 {
     use HasFactory;
 
-
-
      /**
      * The attributes that are mass assignable.
      *
@@ -24,4 +22,9 @@ class Election extends Model
         'winner',
         'active'
     ];
+
+    public function condidates() {
+
+        return $this->hasMany(Candidate::class);
+     }
 }

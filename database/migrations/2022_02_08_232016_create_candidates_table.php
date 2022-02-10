@@ -15,9 +15,14 @@ class CreateCandidatesTable extends Migration
     {
         Schema::create('candidates', function (Blueprint $table) {
             $table->id();
+            $table->boolean('active');
             $table->unsignedBigInteger('request_id')->nullable();
             $table->foreign('request_id')->references('id')
                     ->on('requests')->onDelete('cascade');
+
+            $table->unsignedBigInteger('election_id')->nullable();
+            $table->foreign('election_id')->references('id')
+                    ->on('elections')->onDelete('cascade');
             $table->timestamps();
         });
     }
