@@ -2,30 +2,29 @@ body {
     margin: 0;
     color: #6a6f8c;
     background: white;
-    font: 600 16px/18px 'Open Sans', sans-serif;
+    font: 600 16px/18px "Open Sans", sans-serif;
 }
 
 *,
 :after,
 :before {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 .clearfix:after,
 .clearfix:before {
-    content: '';
-    display: table
+    content: "";
+    display: table;
 }
 
 .clearfix:after {
     clear: both;
-    display: block
+    display: block;
 }
 
 a {
     color: inherit;
     text-decoration: none;
-
 }
 
 .login-wrap {
@@ -37,7 +36,7 @@ a {
     max-width: 525px;
     min-height: 570px;
     position: absolute;
-    box-shadow: #0E115A;
+    box-shadow: #0e115a;
     z-index: 0;
     margin-bottom: 20px;
 }
@@ -47,7 +46,7 @@ a {
     height: 100%;
     position: absolute;
     padding: 90px 70px 50px 70px;
-    background: #0E115A;
+    background: #0e115a;
     border-radius: 20px;
     height: auto;
 }
@@ -71,7 +70,6 @@ a {
     padding-bottom: 5px;
     margin: 0 15px 10px 0;
     display: inline-block;
-
 }
 
 .login-html .sign-in:checked+.tab,
@@ -101,7 +99,7 @@ a {
     padding: 8px;
     padding-left: 10px;
     border-radius: 20px;
-    background: #0E115A;
+    background: #0e115a;
     border-color: white;
     color: #fff;
 }
@@ -118,13 +116,13 @@ a {
 }
 
 .login-form .group .button {
-    background: #DD131A;
+    background: #dd131a;
 }
 
 .hr {
     height: 2px;
-    margin: 20px 0 10px 0;
-    background: #DD131A;
+    margin: 0px 0 10px 0;
+    background: #dd131a;
 }
 
 .foot-lnk {
@@ -145,11 +143,11 @@ a {
 .button {
     padding: 10px 5px;
     border-radius: 20px;
-    border-color: #DD131A;
+    border-color: #dd131a;
 }
 
 #circle {
-    background: #DD131A;
+    background: #dd131a;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -162,7 +160,7 @@ a {
 #rectangleB {
     width: 120px;
     height: 1000px;
-    background: #0E115A;
+    background: #0e115a;
     float: left;
     margin-left: -50px;
 }
@@ -172,13 +170,11 @@ a {
     height: 1000px;
     background: #fff;
     float: left;
-
 }
 
 #rectangleR {
     width: 120px;
     height: 1000px;
-    background: #DD131A;
+    background: #dd131a;
     float: left;
-
 }

@@ -47,6 +47,16 @@ header li a {
     font: 20px "Open Sans", sans-serif;
 }
 
+#foot-lnk {
+    color: white;
+    margin-left: 240px;
+}
+
+#foot-registred {
+    color: white;
+    margin: 100px;
+}
+
 .linksnav {
     margin-top: 18px;
 }
@@ -323,4 +333,49 @@ blockquote {
 .textdeco {
     text-decoration: underline;
     color: #dd131a;
+}
+
+.titre_oublie {
+    font-size: 40px;
+    color: #0e115a;
+}
+
+hr {
+    width: 30%;
+    color: #dd131a;
+    border-top: 5px double #dd131a;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.buttonPassword {
+    background-color: #dd131a;
+    color: white;
+    border: 2px solid #dd131a;
+    text-align: center;
+    padding: 10px 12px;
+    font: 15px "Open Sans", sans-serif;
+}
+
+.buttonPassword:hover {
+    background-color: white;
+    color: #dd131a;
+}
+
+.div1 {
+    float: left;
+}
+
+.div2 {
+    float: right;
+    margin-top: 130px;
+    margin-right: -50px;
+}
+
+.reset_image {
+    position: absolute;
+    z-index: 0;
+    margin-left: -60px;
+    margin-top: 60px;
 }
