@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Election extends Model
 {
     use HasFactory;
+
+
+
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'title',
+        'type',
+        'startDate',
+        'endDate',
+        'winner',
+        'active'
+    ];
 }

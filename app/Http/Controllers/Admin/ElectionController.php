@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Election;
 use Illuminate\Http\Request;
 
 class ElectionController extends Controller
@@ -14,7 +15,11 @@ class ElectionController extends Controller
      */
     public function index()
     {
-        return view('admin.election.index');
+        $elections = Election::all();
+
+        return view('admin.election.index',[
+            'elections' => $elections
+        ]);
     }
 
     /**
@@ -35,7 +40,16 @@ class ElectionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $election = Election::create([
+                'title' => $request['title'],
+                'type' => $request['type'],
+                'startDate' => $request['startDate'],
+                'endDate' => $request['endDate'],
+                'active' => true
+            ]);
+
+
+        return redirect()->route('admin-election.index');
     }
 
     /**
