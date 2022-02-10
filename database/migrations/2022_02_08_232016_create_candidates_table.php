@@ -15,7 +15,9 @@ class CreateCandidatesTable extends Migration
     {
         Schema::create('candidates', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['pre', 'mairie']);
+            $table->unsignedBigInteger('request_id')->nullable();
+            $table->foreign('request_id')->references('id')
+                    ->on('requests')->onDelete('cascade');
             $table->timestamps();
         });
     }
