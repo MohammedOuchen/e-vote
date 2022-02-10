@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CondidateController;
 use App\Http\Controllers\Admin\ElectionController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VoterController;
+use App\Http\Controllers\Voter\UserController as VoterUserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,15 @@ Route::get('/', function () {
     return view('pages/home');
 })->name('homee');
 
+
+
+//after login
+Route::middleware(['auth', 'role:condidate|voter'])->group(function () {
+
+    Route::resource('/vote', VoterUserController::class)->only('index');
+
+});
+
 // Route::get('/loginn', function () {
 //     return view('loginn');
 // })->name('loginn');
@@ -34,9 +44,6 @@ Route::get('/candidatList', function () {
     return view('pages/Voters/candidatList');
 })->name('candidatList');
 
-Route::get('/vote', function () {
-    return view('pages/Voters/vote');
-})->name('vote');
 
 Route::get('/resultat', function () {
     return view('resultat');

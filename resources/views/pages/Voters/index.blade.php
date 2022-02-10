@@ -60,7 +60,7 @@
                         <p class="card-text">Votre voix compte. Alors, pas une minute à perdre, votez dès maintenant
                             !
                         </p>
-                        <a href="{{ route('vote') }}" class="button button2">
+                        <a href="{{ route('vote.index') }}" class="button button2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-check-square-fill" viewBox="0 0 16 16">
                                 <path
