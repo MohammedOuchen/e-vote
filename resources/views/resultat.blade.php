@@ -14,7 +14,6 @@
 </head>
 @extends('layouts.account')
 
-
 <body>
 
     <div class="first">

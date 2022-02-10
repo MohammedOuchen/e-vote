@@ -50,6 +50,10 @@ Route::get('/dashboardU', function () {
     return view('dashboardU');
 })->name('dashboardU');
 
+Route::get('/test', function () {
+    return view('test');
+})->name('test');
+
 
 //after login
 // Route::group(['middleware' => ['auth', 'role:admin'],], function () {

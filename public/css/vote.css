@@ -26,3 +26,8 @@ hr:after {
 .alltable {
     margin-top: 70px;
 }
+
+#reportModal{
+    margin-top: 300px;
+    z-index: 100;
+}
