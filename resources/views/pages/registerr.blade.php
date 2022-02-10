@@ -138,6 +138,12 @@
                                     {{ __('Register') }}
                                 </button>
                             </div>
+
+                            <div class="registred">
+                            @if (Route::has('registerr'))
+                                <a href="{{ route('registerr') }}">{{ __('Déjà inscrit ?') }}</a>
+                            @endif
+                        </div>
                         </div>
                     </div>
                 </div>

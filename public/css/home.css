@@ -115,14 +115,21 @@ button img {
     margin-top: 15px;
     z-index: 1;
     margin-top: 20px;
-    margin-right: 150px;
+    margin-right: 120px;
 }
 
 .InscButton {
     margin-left: 500px;
     margin-top: 25px;
     font: 18px "Open Sans", sans-serif;
+    background-color: #dd131a;
+    color: white;
     border: 2px solid #dd131a;
+    text-align: center;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
 }
 
 .InscButton:hover {

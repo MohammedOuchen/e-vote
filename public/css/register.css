@@ -128,13 +128,20 @@ select {
     margin: 5px 5px 5px 5px;
 }
 
+.registred {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    margin-top: 0px;
+}
+
 .register-form .group .button {
     background: #dd131a;
 }
 
 .hr {
     height: 2px;
-    margin: 20px 0 10px 0;
+    margin-bottom: 20px;
     background: #dd131a;
 }
 
