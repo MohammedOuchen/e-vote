@@ -29,5 +29,5 @@ php artisan migrate
 php artisan db:seed
 ````
 ## default password
-
+** mail** : admin@e-vote.com
 **password** : `Password-1234`

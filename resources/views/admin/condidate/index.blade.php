@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 
-@section('main_title', 'Voteurs')
+@section('main_title', 'Candidats')
 
 @section('content')
 
