@@ -35,30 +35,30 @@
                     <div class="sign-in-htm">
 
                         <div class="group">
-                            <label for="user" class="label">Email</label>
-                            <input id="email" type="email" class="input">
+                            <label for="votermail" class="voterDN">Email</label>
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                             @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                             @enderror
                         </div>
 
                         <div class="group">
-                            <label for="pass" class="label">Mot de passe</label>
-                            <input id="password" type="password" class="input" data-type="password">
+                            <label for="passMP" class="passMP">Mot de passe</label>
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                             @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                             @enderror
                         </div>
                         <div class="foot-lnk">
                                 @if (Route::has('password.request'))
                                     <a href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('Mot de passe oublié ?') }}
                                     </a>
                                 @endif
                         </div>
@@ -70,7 +70,9 @@
                         </div>
 
                         <div class="registred">
-                            <a href="#registred">Déja inscrit ?</a>
+                            @if (Route::has('registerr'))
+                                <a href="{{ route('registerr') }}">{{ __('Pas encore inscrit ?') }}</a>
+                            @endif
                         </div>
                     </div>
                 </div>

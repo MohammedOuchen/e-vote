@@ -103,7 +103,7 @@ a {
     border-radius: 20px;
     background: #0E115A;
     border-color: white;
-
+    color: #fff;
 }
 
 .login-form .group input[data-type="password"] {
