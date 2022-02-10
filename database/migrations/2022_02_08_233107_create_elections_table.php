@@ -16,10 +16,12 @@ class CreateElectionsTable extends Migration
     {
         Schema::create('elections', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['pre', 'mairie']);
-            $table->timestamp('startDate');
-            $table->timestamp('endDate')->default(DB::raw('CURRENT_TIMESTAMP'));;
-            $table->string('winner');
+            $table->string('title')->nullable();
+            $table->enum('type', ['MUNICIPAL', 'DEPARTMENTAL', 'REGIONAL', 'LEGISLATIVE']);
+            $table->date('startDate');
+            $table->date('endDate');
+            $table->string('winner')->nullable();
+            $table->boolean('active');
             $table->timestamps();
         });
     }

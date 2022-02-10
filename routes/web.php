@@ -56,14 +56,14 @@ Route::get('/test', function () {
 
 
 //after login
-// Route::group(['middleware' => ['auth', 'role:admin'],], function () {
+Route::middleware(['auth', 'role:admin'])->group(function () {
 
     Route::resource('/admin', UserController::class)->only('index');
     Route::resource('/admin-vote', VoterController::class)->only('index');
     Route::resource('/admin-condidate', CondidateController::class)->only('index');
-    Route::resource('/admin-election', ElectionController::class)->only('index', 'create');
+    Route::resource('/admin-election', ElectionController::class)->only('index', 'create', 'store');
 
-// });
+});
 
 Auth::routes();
 

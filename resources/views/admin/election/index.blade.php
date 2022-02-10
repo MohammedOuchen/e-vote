@@ -10,18 +10,30 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Nom et Prénom </th>
-        <th scope="col">numero carte nationale </th>
-        <th scope="col">Action</th>
+        <th scope="col">title</th>
+        <th scope="col">Type</th>
+        <th scope="col">Date de debut</th>
+        <th scope="col">date fin</th>
+        <th scope="col">active</th>
+        <th scope="col">action</th>
       </tr>
     </thead>
 
-    {{-- @foreach ($requests as $request )
+    @foreach ($elections as $election )
             <tbody>
                 <tr>
-                <th scope="row">{{ $request->id }}</th>
-                <td>{{ $request->user->full_name }}</td>
-                <td>{{ $request->user->num_carte_national }}</td>
+                <th scope="row">{{ $election->id }}</th>
+                <td>{{ $election->title }}</td>
+                <td>{{ $election->type }}</td>
+                <td>{{ $election->startDate }}</td>
+                <td>{{ $election->endDate }}</td>
+                <td>
+                    @if ($election->active)
+                    <img src="https://img.icons8.com/color/48/000000/checkmark--v2.png"/>
+                    @else
+                    <img src="https://img.icons8.com/fluency/48/000000/not-applicable.png"/>
+                    @endif
+                </td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                         <button type="button" class="btn btn-danger">Supprimer</button>
@@ -31,7 +43,7 @@
                 </td>
                 </tr>
             </tbody>
-    @endforeach --}}
+    @endforeach
 
   </table>
 
