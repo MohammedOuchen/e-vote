@@ -33,10 +33,10 @@
                         <div class="input-group">
                             <select class="form-select" id="inputGroupSelect04"
                                 aria-label="Example select with button addon">
-                                <option selected>Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option selected>Elections municipales</option>
+                                <option value="1">Elections départementales</option>
+                                <option value="2">Elections régionales</option>
+                                <option value="3">Elections législatives</option>
                             </select>
                             <a href="{{ route('vote') }}" class="button button1" type="button">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
