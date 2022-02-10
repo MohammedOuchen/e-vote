@@ -125,6 +125,14 @@ a {
     background: #dd131a;
 }
 
+.hr_login {
+    height: 2px;
+    margin: 0px 0 10px 0;
+    background: #dd131a;
+    width: 50%;
+    margin: auto;
+}
+
 .foot-lnk {
     text-align: center;
     color: white;

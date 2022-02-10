@@ -31,7 +31,7 @@
                 <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
                     class="tab">CONNEXION</label>
                 <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
-                <div class="hr"></div>
+                <div class="hr_login"></div>
                 <div class="login-form">
                     <div class="sign-in-htm">
 
@@ -66,8 +66,6 @@
                             </a>
                             @endif
                             </divclass=>
-
-                            <div class="hr"></div>
 
                             <div class="group">
                                 <input type="submit" class="button" value="Se connecter">

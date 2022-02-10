@@ -39,7 +39,26 @@
                             @csrf
                             <div class="form-group">
 
-                                <div class="group">
+
+                                <div class="group wrapper">
+                                    <input onchange="yesnoCheck(this);" value="Candidater" type="radio" name="select"
+                                        id="option-1" class="form-select" checked>
+                                    <input onchange="yesnoCheck(this);" value="Voter" type="radio" name="select"
+                                        id="option-2">
+
+                                    <label for="option-1" class="option option-1">
+                                        <div class="dot"></div>
+                                        <span>Candidater</span>
+                                    </label>
+
+                                    <label for="option-2" class="option option-2">
+                                        <div class="dot"></div>
+                                        <span>Voter</span>
+                                    </label>
+                                </div>
+
+
+                                <!-- <div class="group">
                                     <select onchange="yesnoCheck(this);" id="choice" class="form-select"
                                         aria-label="Default select example" placeholder="Choisissez ..." required>
                                         <option disabled selected value default> -- select an option -- </option>
@@ -47,7 +66,7 @@
                                         <option value="Voter">Voter</option>
                                     </select>
                                     <small id="mainChoice" class="form-text">Vous voulez voter ou candidater</small>
-                                </div>
+                                </div> -->
 
                                 <div id="ifYes" class="group">
                                     <select class="form-select" aria-label="Default select example"
