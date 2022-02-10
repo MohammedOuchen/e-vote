@@ -20,6 +20,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
 <body>
+    @extends('layouts.home')
+
     <div class="allcontent">
         <div class="container text-center">
             <h1><b> VOTEZ, c'est votre droit ! </b></h1>
@@ -123,7 +125,7 @@ function myFunction() {
 //         elems[0].disabled = true;
 //     }
 //     $('#exampleModalCenter').modal('hide');
-//     // //$('#exampleModalCenter').modal({backdrop: 'static', keyboard: false})  
+//     // //$('#exampleModalCenter').modal({backdrop: 'static', keyboard: false})
 //     // $(document.body).removeClass("modal-open");
 //     // $(".modal-backdrop").remove();
 // }

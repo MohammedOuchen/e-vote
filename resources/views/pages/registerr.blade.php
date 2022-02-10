@@ -35,7 +35,7 @@
                 <div class="hr"></div>
                 <div class="register-form">
                     <div class="sign-in-htm">
-                        <form method="POST" action="{{ route('registerr') }}">
+                        <form method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="form-group">
 
@@ -176,8 +176,8 @@
                             </div>
 
                             <div class="registred">
-                                @if (Route::has('registerr'))
-                                <a id="mainChoice" href="{{ route('loginn') }}">{{ __('Déjà inscrit ?') }}</a>
+                                @if (Route::has('register'))
+                                <a id="mainChoice" href="{{ route('login') }}">{{ __('Déjà inscrit ?') }}</a>
                                 @endif
                             </div>
                     </div>

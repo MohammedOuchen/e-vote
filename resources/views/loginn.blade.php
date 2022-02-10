@@ -72,9 +72,9 @@
                             </div>
 
                             <div class="registred">
-                                @if (Route::has('registerr'))
+                                @if (Route::has('register'))
                                 <a id="foot-registred"
-                                    href="{{ route('registerr') }}">{{ __('Pas encore inscrit ?') }}</a>
+                                    href="{{ route('register') }}">{{ __('Pas encore inscrit ?') }}</a>
                                 @endif
                             </div>
                     </div>

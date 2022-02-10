@@ -15,7 +15,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/home.css') }}" />
 </head>
-@extends('layouts.account')
+@extends('layouts.home')
 
 <body>
     @section('content')

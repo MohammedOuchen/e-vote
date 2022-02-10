@@ -58,7 +58,7 @@ class RegisterController extends Controller
             'first_name' => ['required', 'string', 'max:255'],
             'date_of_birth' => ['required', 'string', 'max:255'],
             'num_carte_national' =>['required', 'string', 'max:255'],
-            'telephone' => ['required', 'string', 'max:255']
+            // 'telephone' => ['required', 'string', 'max:255']
         ]);
     }
 
@@ -76,7 +76,7 @@ class RegisterController extends Controller
             'first_name' => $data['first_name'],
             'date_of_birth' => $data['date_of_birth'],
             'num_carte_national' => $data['num_carte_national'],
-            'telephone' => $data['telephone'],
+            // 'telephone' => $data['telephone'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

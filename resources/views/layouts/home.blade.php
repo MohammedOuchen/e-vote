@@ -30,7 +30,21 @@
             <ul class="linksnav">
                 <li><a href="{{ route('homee') }}">Acceuil</a></li>
                 <li><a href="https://www.service-public.fr/particuliers/vosdroits/N47">Actualité</a></li>
-                <li><a href="{{ route('loginn') }}">Se Connecter</a></li>
+                @auth
+                   <li>
+                    <a  href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            Se Déconnecter
+                    </a>
+                    </li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                    </form>
+                @endauth
+                @guest
+                <li><a href="{{ route('login') }}">Se Connecter</a></li>
+                @endguest
+
             </ul>
         </nav>
     </header>

@@ -45,9 +45,9 @@
 
                                 <div class="group wrapper">
                                     <input onchange="yesnoCheck(this);" value="Candidater" type="radio" name="select"
-                                        id="option-1" class="form-select" @if(old('select')) checked @endif>
+                                        id="option-1" class="form-select" checked>
                                     <input onchange="yesnoCheck(this);" value="Voter" type="radio" name="select"
-                                        id="option-2" @if(!old('select')) checked @endif>
+                                        id="option-2">
 
                                     <label for="option-1" id="opt" class="option option-1">
                                         <div class="dot"></div>
@@ -126,7 +126,7 @@
                             </div>
 
                             <div class="group">
-                                <label for="date_of_birth" class="voterDN">Date de naissance</label>
+                                <label for="voterDN" class="voterDN">Date de naissance</label>
                                 <input id="date_of_birth" type="date"
                                     class="form-control @error('date_of_birth') is-invalid @enderror"
                                     name="date_of_birth" value="{{ old('date_of_birth') }}" required autocomplete="name"

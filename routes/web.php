@@ -26,17 +26,13 @@ Route::get('/', function () {
     return view('pages/home');
 })->name('homee');
 
-Route::get('/loginn', function () {
-    return view('loginn');
-})->name('loginn');
+// Route::get('/loginn', function () {
+//     return view('loginn');
+// })->name('loginn');
 
 Route::get('/candidatList', function () {
     return view('pages/Voters/candidatList');
 })->name('candidatList');
-
-Route::get('/registerr', function () {
-    return view('pages/registerr');
-})->name('registerr');
 
 Route::get('/vote', function () {
     return view('pages/Voters/vote');
