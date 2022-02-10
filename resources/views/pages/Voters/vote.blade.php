@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('layouts.account')
 <!DOCTYPE html>
 <html lang="en">
 
