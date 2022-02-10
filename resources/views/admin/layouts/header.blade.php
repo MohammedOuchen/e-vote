@@ -12,7 +12,7 @@
                 </button>
 
                 <!-- Navbar Brand -->
-                <a href="}" class="navbar-brand ">
+                <a href="" class="navbar-brand ">
                     <span>E-vote</span>
                 </a>
 
@@ -24,17 +24,16 @@
                                 notifications
                             </i>
                         </a>
-                        <div id="notifications_menu"
-                            style="overflow: hidden;"
+                        <div id="notifications_menu" style="overflow: hidden;"
                             class="dropdown-menu dropdown-menu-right navbar-notifications-menu">
                             <div class="dropdown-item d-flex align-items-center py-2">
-                                <span class="flex navbar-notifications-menu__title m-0">{{ __('front.notifications.title') }}</span>
-                                <form action="" id="clearAllForm"
-                                    method="post">
+                                <span
+                                    class="flex navbar-notifications-menu__title m-0">{{ __('front.notifications.title') }}</span>
+                                <form action="" id="clearAllForm" method="post">
                                     @csrf
                                 </form>
-                                <a href="#" onclick="document.querySelector('#clearAllForm').submit()"
-                                    id="clearAll" class="text-muted">
+                                <a href="#" onclick="document.querySelector('#clearAllForm').submit()" id="clearAll"
+                                    class="text-muted">
                                     <small>{{ __('front.notifications.clear') }}</small>
                                 </a>
                             </div>
@@ -43,9 +42,9 @@
                                     {{-- @forelse (Auth::user()->unreadNotifications as $notification)
                                         @include('notifications.show' . explode('\\', $notification->type)[2])
                                     @empty --}}
-                                        <div style="margin-top: 60px;" class="dropdown-item d-flex justify-content-center">
-                                            {{ __('front.notifications.empty') }}
-                                        </div>
+                                    <div style="margin-top: 60px;" class="dropdown-item d-flex justify-content-center">
+                                        {{ __('front.notifications.empty') }}
+                                    </div>
                                     {{-- @endforelse --}}
                                 </div>
                             </div>
@@ -66,15 +65,14 @@
                                 <i class="material-icons">dvr</i> Dashboard
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                {{ __('Logout') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
-                             </form>
+                            </form>
                         </div>
                     </li>
                 </ul>
@@ -84,11 +82,11 @@
 </div>
 
 @section('scripts')
-    <script>
-        $(document).ready(() => {
-            $("#clearAll").click(() => {
-                $("#clearAllForm").submit();
-            })
-        })
-    </script>
+<script>
+$(document).ready(() => {
+    $("#clearAll").click(() => {
+        $("#clearAllForm").submit();
+    })
+})
+</script>
 @endsection

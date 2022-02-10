@@ -141,7 +141,7 @@ select {
 
 .hr {
     height: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     background: #dd131a;
 }
 
@@ -151,6 +151,10 @@ select {
     font-size: 12px;
     margin-left: 240px;
     margin-top: -20px;
+}
+
+#mainChoice {
+    color: white;
 }
 
 .notyet {
