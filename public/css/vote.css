@@ -26,3 +26,10 @@ hr:after {
 .alltable {
     margin-top: 70px;
 }
+
+.modal-header{
+    width: 100%;
+    max-height: 120px;
+    display:inline-block;
+    overflow:auto;
+}

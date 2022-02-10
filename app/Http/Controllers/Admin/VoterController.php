@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Candidate;
+use App\Models\Election;
 use App\Models\Request as ModelsRequest;
 use App\Models\User;
+use App\Models\Voter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
@@ -18,7 +21,7 @@ class VoterController extends Controller
     public function index()
     {
         // $voters = User::role('voter')
-        $requests = ModelsRequest::whereStatus('IN_PROGRESS')
+        $requests = ModelsRequest::query()
                         ->with('user')
                         ->whereHas('user', function (Builder $query) {
                             $query->Role('voter');
@@ -48,8 +51,43 @@ class VoterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $requestModel = ModelsRequest::findorFail($request['request_id']);
+        $requestModel->status = 'VALIDATE';
+        $requestModel->save();
+        $user = User::findorFail($requestModel->user_id);
+        $user->isconfirmed = true;
+        $user->save();
+        $voter = Voter::where('request_id', $requestModel->id)->get();
+        if($voter == null){
+            Voter::create([
+                'active' => true,
+                'request_id' => $requestModel->id,
+            ]);
+        }
+        $request->session()->flash('status', 'Enregistrer');
+        return redirect()->back();
     }
+
+  /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function setStatus(Request $request)
+    {
+        $requestModel = ModelsRequest::findorFail($request['request_id']);
+        $requestModel->status = 'NOT_VALIDATE';
+        $requestModel->save();
+        $user = User::findorFail($requestModel->user_id);
+        $user->isconfirmed = false;
+        $user->save();
+        $request->session()->flash('status', 'Enregistrer');
+
+        return redirect()->back();
+    }
+
 
     /**
      * Display the specified resource.

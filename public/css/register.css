@@ -141,8 +141,18 @@ select {
 
 .hr {
     height: 2px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    margin-top: 15px;
     background: #dd131a;
+}
+
+#opt{
+    display: inline-flex;
+    width: 400px;
+}
+
+span {
+    white-space:pre;
 }
 
 .foot-lnk {
