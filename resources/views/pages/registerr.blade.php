@@ -46,14 +46,14 @@
                                     <input onchange="yesnoCheck(this);" value="Voter" type="radio" name="select"
                                         id="option-2">
 
-                                    <label for="option-1" class="option option-1">
+                                    <label for="option-1" id="opt" class="option option-1">
                                         <div class="dot"></div>
                                         <span>Candidater</span>
                                     </label>
 
-                                    <label for="option-2" class="option option-2">
+                                    <label for="option-2" id="opt" class="option option-2">
                                         <div class="dot"></div>
-                                        <span>Voter</span>
+                                        <span>Voter       </span>
                                     </label>
                                 </div>
 
