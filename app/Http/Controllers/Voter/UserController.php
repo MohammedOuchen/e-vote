@@ -58,7 +58,7 @@ class UserController extends Controller
         //          dump($condidate);
         // }
         // dd();
-        return view('resultat', [
+        return view('pages.Voters.resultat', [
             'condidats' => $collections
         ]);
     }
@@ -68,9 +68,15 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function displayElection(Request $request)
     {
-        //
+        $election = Election::where('type', $request['election_type'])
+                             ->where('active', true)
+                             ->first();
+
+        return view('pages.Voters.candidatList',[
+            'users' => $election->users
+        ]);
     }
 
     /**

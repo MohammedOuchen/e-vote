@@ -33,18 +33,9 @@ Route::get('/', function () {
 Route::middleware(['auth', 'role:condidate|voter'])->group(function () {
 
     Route::resource('/vote', VoterUserController::class)->only('index', 'store');
-
     Route::get('/resultat',[VoterUserController::class, 'resultat'] )->name('resultat');
+    Route::post('/election-lsit', [VoterUserController::class, 'displayElection'])->name('display.election');
 });
-
-// Route::get('/loginn', function () {
-//     return view('loginn');
-// })->name('loginn');
-
-Route::get('/candidatList', function () {
-    return view('pages/Voters/candidatList');
-})->name('candidatList');
-
 
 
 
