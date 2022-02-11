@@ -58,9 +58,9 @@ class UserController extends Controller
         });
         if ($vote) {
             $election->users()->syncWithoutDetaching([Auth::id() => ['candidate_id' => $user->requests[0]->candidate->id]]);
-            $request->session()->flash('status', 'Enregistrer');
+            $request->session()->flash('status', 'Votre vote a été enregistré');
         }else{
-            $request->session()->flash('error', 'Error !');
+            $request->session()->flash('error', 'Vous avez déja voter !');
         }
 
         return redirect()->back();
