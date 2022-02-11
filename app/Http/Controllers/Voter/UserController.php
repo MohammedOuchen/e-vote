@@ -32,7 +32,7 @@ class UserController extends Controller
         // dd('ici');
 
         $elections = Election::query()
-                           ->with('condidates')
+                           ->with(['condidates','condidates.request', 'condidates.request.user' ])
                            ->get();
 
         $collections = collect();
@@ -48,13 +48,19 @@ class UserController extends Controller
                         }
                 }
                 $collections->push(['candidat' => $condidate,
-                                      'nb' => $nb_vote ]);
+                                      'nb' =>  $nb_vote ]);
                 // dump($condidate);
             }
         }
 
-        dd($collections);
-        return view('resultat');
+        // dd($collections);
+        // foreach ($collections as $condidate) {
+        //          dump($condidate);
+        // }
+        // dd();
+        return view('resultat', [
+            'condidats' => $collections
+        ]);
     }
 
     /**

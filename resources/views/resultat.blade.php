@@ -64,17 +64,21 @@
     </div>
     <br>
     <div class="row g-3">
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card">
-                <img src="./Pictures/alex.jpg" class="card-img-top" alt=>
-                <div class="card-body">
-                    <h5 id="card-title" class="card-title">Alexandre Langlois</h5>
-                    <p class="card-text"> 20%</p>
 
+        @foreach ($condidats as $condidat )
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="./Pictures/alex.jpg" class="card-img-top" alt=>
+                    <div class="card-body">
+                        <h5 id="card-title" class="card-title">{{ $condidat['candidat']->request->user->full_name }}</h5>
+                        <p class="card-text">{{ $condidat['nb'] }}</p>
+
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
+        @endforeach
+
+        {{-- <div class="col-12 col-md-6 col-lg-4">
             <div class="card">
                 <img src="./Pictures/mari.jpg" class="card-img-top" alt="">
                 <div class="card-body">
@@ -125,7 +129,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
 </body>
