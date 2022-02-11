@@ -6,19 +6,19 @@
                 <li class="sidebar-menu-item ">
                     <a class="sidebar-menu-button" href="{{ route('admin-vote.index') }}">
                         <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">people</i>
-                        <span class="sidebar-menu-text">Voteur</span>
+                        <span class="sidebar-menu-text">Voteurs</span>
                     </a>
                 </li>
                 <li class="sidebar-menu-item ">
                     <a class="sidebar-menu-button" href="{{ route('admin-condidate.index') }}">
                         <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">people</i>
-                        <span class="sidebar-menu-text">Condidat</span>
+                        <span class="sidebar-menu-text">Candidats</span>
                     </a>
                 </li>
                 <li class="sidebar-menu-item ">
                     <a class="sidebar-menu-button" href="{{ route('admin-election.index') }}">
                         <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">people</i>
-                        <span class="sidebar-menu-text">Election</span>
+                        <span class="sidebar-menu-text">Elections</span>
                     </a>
                 </li>
 

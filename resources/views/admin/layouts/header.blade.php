@@ -12,9 +12,7 @@
                 </button>
 
                 <!-- Navbar Brand -->
-                <a href="" class="navbar-brand ">
-                    <span>E-vote</span>
-                </a>
+                <a href=""><img class="logoImg" src="{{ asset('Pictures/logo.png') }}" width="100" height="50"></a>
 
                 <ul class="nav navbar-nav ml-auto d-none d-md-flex">
                     <li class="nav-item dropdown">
