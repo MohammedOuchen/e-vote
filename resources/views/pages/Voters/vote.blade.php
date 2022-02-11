@@ -41,7 +41,7 @@
 
         @if (session()->has('error'))
         <center>
-            <div style="width:300px;" class="alert alert-danger d-flex align-items-center" role="alert">
+            <div style="width:240px;" class="alert alert-danger d-flex align-items-center" role="alert">
                 <svg class="bi flex-shrink-0 me-2" width="20" height="20" role="img" aria-label="Danger:">
                     <use xlink:href="#exclamation-triangle-fill" />
                 </svg>
@@ -50,6 +50,7 @@
                         {{  session()->get('error')}}
                     </h6>
                 </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
 
         </center>
@@ -66,6 +67,7 @@
                         {{  session()->get('status')}}
                     </h6>
                 </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
 
         </center>
