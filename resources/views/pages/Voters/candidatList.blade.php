@@ -2,10 +2,16 @@
 
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/candidatList.css') }}" />
 </head>
+
 <body>
+
+    <h1 class="titleC"><b> Liste des candidats !</b></h1>
+    <p>Sentez-vous fier d'être un électeur. Soyez prêt à voter</p>
+    <hr>
     {{-- <div class="card" style="width: 18rem;">
     <img src="{{ asset('Pictures/Eric.jpg') }}" class="card-img-top" alt="">
     <div class="card-body">
@@ -30,12 +36,8 @@
                         <a href="https://fr.wikipedia.org/wiki/Emmanuel_Macron" class="btn btn-primary">Afficher plus</a>
                     </div>
                 </div>
-         @endforeach
-        @else
-        <h2>
-            Vide
-        </h2>
-        @endif
+            </div>
+        @endforeach
 
 
     </div>
@@ -68,4 +70,5 @@
    </div> -->
 
 </body>
+
 </html>

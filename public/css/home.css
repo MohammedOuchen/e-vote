@@ -483,3 +483,12 @@ input[type="radio"] {
 #ifYes {
     display: none;
 }
+
+.titleC {
+    font: 55px "Open Sans", sans-serif;
+    font-weight: bold;
+    color: #0e115a;
+    margin-top: 200px;
+    margin: auto;
+    z-index: 1;
+}
