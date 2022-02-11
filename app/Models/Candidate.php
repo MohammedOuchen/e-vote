@@ -15,12 +15,19 @@ class Candidate extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'active'
+        'active',
+        'request_id',
+        'election_id'
     ];
 
 
     public function election() {
 
         return  $this->belongsTo(Election::class);
+    }
+
+    public function request() {
+
+        return  $this->belongsTo(Request::class);
     }
 }

@@ -27,4 +27,10 @@ class Election extends Model
 
         return $this->hasMany(Candidate::class);
      }
+
+     public function users() {
+
+        return $this->belongsToMany(User::class)
+                 ->withPivot('candidate_id');
+     }
 }

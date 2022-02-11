@@ -37,4 +37,14 @@ class Request extends Model
 
         return  $this->belongsTo(User::class);
     }
+
+
+    public function candidate() {
+
+        return  $this->hasOne(Candidate::class);
+    }
+    public function voter() {
+
+        return  $this->hasOne(Voter::class);
+    }
 }

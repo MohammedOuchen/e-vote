@@ -32,7 +32,7 @@ Route::get('/', function () {
 //after login
 Route::middleware(['auth', 'role:condidate|voter'])->group(function () {
 
-    Route::resource('/vote', VoterUserController::class)->only('index');
+    Route::resource('/vote', VoterUserController::class)->only('index', 'store');
 
 });
 

@@ -56,6 +56,11 @@ class User extends Authenticatable
        return $this->hasMany(Request::class);
     }
 
+    public function elections() {
+        return $this->belongsToMany(Election::class)
+                     ->withPivot('candidate_id');
+    }
+
      /**
      * Get the user's full name.
      *

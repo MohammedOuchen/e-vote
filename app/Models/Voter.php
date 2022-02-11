@@ -18,8 +18,8 @@ class Voter extends Model
         'active'
     ];
 
-    public function election() {
+    public function request() {
 
-        return  $this->belongsTo(Election::class);
+        return  $this->belongsTo(Request::class);
     }
 }

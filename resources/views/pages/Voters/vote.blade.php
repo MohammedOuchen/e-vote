@@ -36,33 +36,37 @@
                 <table id="myTable" class="table table-striped table-hover">
                     <thead>
                         <tr class="header">
-                            <th>Prénom</th>
-                            <th>Nom</th>
+                            <th>Nom et Prénom</th>
+                            <th>Date de naissance</th>
                             <th>Voter</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @forelse ($voters as $voter)
+
                         <tr>
-                            <td>John</td>
-                            <td>Doe</td>
+                            <td>{{ $voter->full_name }}</td>
+                            <td>{{ $voter->date_of_birth }}</td>
                             <td>
                                 <!-- <button type="button" class="btn btn-outline-danger">Voter</button> -->
                                 <!-- Button trigger modal -->
-                                <button name="VoteButton" type="button" class="btn btn-outline-danger" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#exampleModalCenter">
-                                Voter
-                                </button>
+
+                                <form action="{{ route('vote.store') }}"  method="POST">
+                                    @csrf
+                                    <input type="hidden" name="candidat_id" value="{{ $voter->id }}">
+                                    <button name="VoteButton" type="submit" class="btn btn-outline-danger" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#exampleModalCenter">
+                                        Voter
+                                    </button>
+                                </form>
+
                             </td>
                         </tr>
-                        <tr>
-                            <td>Mary</td>
-                            <td>Moe</td>
-                            <td><button name="VoteButton" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalCenter">Voter</button></td>
-                        </tr>
-                        <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td><button name="VoteButton" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalCenter">Voter</button></td>
-                        </tr>
+
+                        @empty
+                                 Aucun candidat pour l'instant.
+                        @endforelse
+
+
                     </tbody>
                 </table>
             </div>
@@ -103,7 +107,7 @@ function myFunction() {
     table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
     for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
+        td = tr[i].getElementsByTagName("td")[0];
         if (td) {
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {

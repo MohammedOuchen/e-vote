@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Voter;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -14,8 +16,13 @@ class UserController extends Controller
      */
     public function index()
     {
+        $voters = User::role('condidate')
+                   ->where('isconfirmed', true)
+                   ->get();
 
-        return view('pages.Voters.vote');
+        return view('pages.Voters.vote',[
+            'voters' => $voters
+        ]);
     }
 
     /**
@@ -36,7 +43,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::role('condidate')
+                        ->with(['requests.candidate'])
+                        ->whereId($request['candidat_id'])
+                        ->where('isconfirmed', true)
+                        ->first();
+        $election = $user->requests[0]->candidate->election;
+
+        $election->users()->syncWithoutDetaching([Auth::id() => ['candidate_id' =>2]]);
+        // dd($election->users);
+
+
+        $request->session()->flash('status', 'Enregistrer');
+
+        return redirect()->back();
     }
 
     /**
