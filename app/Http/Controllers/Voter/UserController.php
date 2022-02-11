@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Voter;
 
 use App\Http\Controllers\Controller;
+use App\Models\Election;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Ramsey\Collection\Collection;
 
 class UserController extends Controller
 {
@@ -23,6 +25,36 @@ class UserController extends Controller
         return view('pages.Voters.vote',[
             'voters' => $voters
         ]);
+    }
+
+    public function resultat(){
+
+        // dd('ici');
+
+        $elections = Election::query()
+                           ->with('condidates')
+                           ->get();
+
+        $collections = collect();
+
+        foreach ($elections as $election) {
+
+            foreach ($election->condidates as $condidate) {
+                $nb_vote = 0;
+                foreach ($election->users as $user) {
+                    // dd($user->pivot->candidate_id);
+                        if ($user->pivot->candidate_id == $condidate->id) {
+                            $nb_vote++;
+                        }
+                }
+                $collections->push(['candidat' => $condidate,
+                                      'nb' => $nb_vote ]);
+                // dump($condidate);
+            }
+        }
+
+        dd($collections);
+        return view('resultat');
     }
 
     /**

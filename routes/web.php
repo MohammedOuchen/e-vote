@@ -34,6 +34,7 @@ Route::middleware(['auth', 'role:condidate|voter'])->group(function () {
 
     Route::resource('/vote', VoterUserController::class)->only('index', 'store');
 
+    Route::get('/resultat',[VoterUserController::class, 'resultat'] )->name('resultat');
 });
 
 // Route::get('/loginn', function () {
@@ -45,9 +46,7 @@ Route::get('/candidatList', function () {
 })->name('candidatList');
 
 
-Route::get('/resultat', function () {
-    return view('resultat');
-})->name('resultat');
+
 
 Route::get('/dashboardU', function () {
     return view('dashboardU');
