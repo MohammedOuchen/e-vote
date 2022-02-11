@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Voter;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ConfiremedRequestVoter;
 use App\Models\Election;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Ramsey\Collection\Collection;
 
 class UserController extends Controller
@@ -71,11 +73,19 @@ class UserController extends Controller
     public function displayElection(Request $request)
     {
         $election = Election::where('type', $request['election_type'])
+                            ->with('condidates', 'condidates.request', 'condidates.request.user')
                              ->where('active', true)
                              ->first();
 
+        if ($election != null) {
+            $users = $election->condidates;
+        }else{
+            $users = null;
+        }
+
+        // dd($election);
         return view('pages.Voters.candidatList',[
-            'users' => $election->users
+            'users' => $users
         ]);
     }
 
@@ -103,6 +113,7 @@ class UserController extends Controller
         if ($vote) {
             $election->users()->syncWithoutDetaching([Auth::id() => ['candidate_id' => $user->requests[0]->candidate->id]]);
             $request->session()->flash('status', 'Votre vote a été enregistré');
+            
         }else{
             $request->session()->flash('error', 'Vous avez déja voter !');
         }

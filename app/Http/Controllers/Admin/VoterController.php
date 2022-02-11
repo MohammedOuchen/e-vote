@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ConfiremedRequestVoter;
+use App\Mail\RefusRequest;
 use App\Models\Candidate;
 use App\Models\Election;
 use App\Models\Request as ModelsRequest;
@@ -10,6 +12,7 @@ use App\Models\User;
 use App\Models\Voter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class VoterController extends Controller
 {
@@ -66,6 +69,7 @@ class VoterController extends Controller
             ]);
         }
         $request->session()->flash('status', 'Enregistrer');
+        Mail::to($user->email)->send(new ConfiremedRequestVoter());
         return redirect()->back();
     }
 
@@ -84,7 +88,7 @@ class VoterController extends Controller
         $user->isconfirmed = false;
         $user->save();
         $request->session()->flash('status', 'Enregistrer');
-
+        Mail::to($user->email)->send(new RefusRequest());
         return redirect()->back();
     }
 

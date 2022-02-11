@@ -17,18 +17,26 @@
 
     <div class="row g-3">
 
+        @if ($users)
+
         @foreach ($users as $user )
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
-                    <img src="./Pictures/alex.jpg" class="card-img-top" alt=>
-                    <div class="card-body">
-                        <h5 id="card-title">{{ $user->full_name }}</h5>
-                        <p class="card-text">{{ $user->date_of_birth }}</p>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="./Pictures/alex.jpg" class="card-img-top" alt=>
+                        <div class="card-body">
+                            <h5 id="card-title">{{ $user->request->user->full_name }}</h5>
+                            <p class="card-text">{{ $user->request->user->date_of_birth }}</p>
+                        </div>
+                        <a href="https://fr.wikipedia.org/wiki/Emmanuel_Macron" class="btn btn-primary">Afficher plus</a>
                     </div>
-                    <a href="https://fr.wikipedia.org/wiki/Emmanuel_Macron" class="btn btn-primary">Afficher plus</a>
                 </div>
-            </div>
-        @endforeach
+         @endforeach
+        @else
+        <h2>
+            Vide
+        </h2>
+        @endif
+
 
     </div>
 
