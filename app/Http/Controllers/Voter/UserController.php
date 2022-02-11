@@ -43,6 +43,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $vote = true;
         $user = User::role('condidate')
                         ->with(['requests.candidate'])
                         ->whereId($request['candidat_id'])
@@ -50,11 +51,17 @@ class UserController extends Controller
                         ->first();
         $election = $user->requests[0]->candidate->election;
 
-        $election->users()->syncWithoutDetaching([Auth::id() => ['candidate_id' =>2]]);
-        // dd($election->users);
-
-
-        $request->session()->flash('status', 'Enregistrer');
+        $election->users()->each(function($user) use (&$vote){
+               if ($user->id == Auth::id()) {
+                 $vote = false;
+               }
+        });
+        if ($vote) {
+            $election->users()->syncWithoutDetaching([Auth::id() => ['candidate_id' => $user->requests[0]->candidate->id]]);
+            $request->session()->flash('status', 'Enregistrer');
+        }else{
+            $request->session()->flash('error', 'Error !');
+        }
 
         return redirect()->back();
     }

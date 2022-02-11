@@ -22,7 +22,24 @@
 <body>
     @extends('layouts.home')
 
+
     <div class="allcontent">
+
+        @if (session()->has('error'))
+        <center>
+            <h3 style="color:crimson">
+                {{  session()->get('error')}}
+            </h3>
+        </center>
+       @endif
+
+    @if (session()->has('status'))
+        <center>
+            <h3 style="color:green">
+                {{  session()->get('status')}}
+            </h3>
+        </center>
+    @endif
         <div class="container text-center">
             <h1><b> VOTEZ, c'est votre droit ! </b></h1>
             <p>Sentez-vous fier d'être un électeur. Soyez prêt à voter</p>
