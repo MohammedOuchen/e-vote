@@ -9,9 +9,9 @@
 
 <body>
 
-    <h1 class="titleC"><b> Liste des candidats !</b></h1>
+    {{-- <h1 class="titleC"><b> Liste des candidats !</b></h1>
     <p>Sentez-vous fier d'être un électeur. Soyez prêt à voter</p>
-    <hr>
+    <hr> --}}
     {{-- <div class="card" style="width: 18rem;">
     <img src="{{ asset('Pictures/Eric.jpg') }}" class="card-img-top" alt="">
     <div class="card-body">
@@ -26,6 +26,7 @@
         @if ($users)
 
         @foreach ($users as $user )
+
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card">
                         <img src="./Pictures/alex.jpg" class="card-img-top" alt=>
@@ -36,10 +37,10 @@
                         <a href="https://fr.wikipedia.org/wiki/Emmanuel_Macron" class="btn btn-primary">Afficher plus</a>
                     </div>
                 </div>
-            </div>
+
         @endforeach
 
-
+       @endif
     </div>
 
     <!-- <div class="container mt-5">
