@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Request;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -49,10 +50,15 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'first_name' => ['required', 'string', 'max:255'],
+            'date_of_birth' => ['required', 'string', 'max:255'],
+            'num_carte_national' =>['required', 'string', 'max:255'],
+            // 'telephone' => ['required', 'string', 'max:255']
         ]);
     }
 
@@ -64,10 +70,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+
+        $user = User::create([
+            'last_name' => $data['last_name'],
+            'first_name' => $data['first_name'],
+            'date_of_birth' => $data['date_of_birth'],
+            'num_carte_national' => $data['num_carte_national'],
+            // 'telephone' => $data['telephone'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        // Adding permissions via a role
+        $user->assignRole('voter');
+
+        $request = Request::create([
+            'type' => 'vote',
+            'status' => Request::STATUS_PENDING,
+        ]);
+
+        return $user;
     }
 }

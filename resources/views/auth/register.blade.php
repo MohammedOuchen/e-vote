@@ -1,5 +1,211 @@
-@extends('layouts.app')
+@extends('layouts.home')
+<title>Inscription</title>
+@section('content')
 
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/home.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/register.css') }}" />
+    <title>Inscription</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div id="circle"></div>
+    <div id="rectangleB"></div>
+    <div id="rectangleW"></div>
+    <div id="rectangleR"></div>
+
+    <div class="register-wrap" style="scroll-behavior: auto;">
+        <div class="register-html">
+            <form method="POST">
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
+                    class="tab">INSCRIPTION</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+
+                <!-- <div class="hr"></div> -->
+
+                <div class="register-form">
+                    <div class="sign-in-htm">
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
+                            <div class="form-group">
+
+
+                                <div class="group wrapper">
+                                    <input onchange="yesnoCheck(this);" value="Candidater" type="radio" name="select"
+                                        id="option-1" class="form-select" @if(old('select')) checked @endif required>
+
+                                    <input onchange="yesnoCheck(this);" value="Voter" type="radio" name="select"
+                                        id="option-2" @if(old('select')) checked @endif>
+
+
+                                    <label for="option-1" id="opt" class="option option-1">
+                                        <div class="dot"></div>
+                                        <span>Candidater</span>
+                                    </label>
+
+                                    <label for="option-2" id="opt" class="option option-2">
+                                        <div class="dot"></div>
+                                        <span>Voter </span>
+                                    </label>
+                                </div>
+
+
+                                <!-- <div class="group">
+                                    <select onchange="yesnoCheck(this);" id="choice" class="form-select"
+                                        aria-label="Default select example" placeholder="Choisissez ..." required>
+                                        <option disabled selected value default> -- select an option -- </option>
+                                        <option value="Candidater" selected>Candidater</option>
+                                        <option value="Voter">Voter</option>
+                                    </select>
+                                    <small id="mainChoice" class="form-text">Vous voulez voter ou candidater</small>
+                                </div> -->
+
+                                <div id="ifYes" class="group">
+                                    <select class="form-select" aria-label="Default select example"
+                                        placeholder="Choisissez ...">
+                                        <option selected>Elections municipales</option>
+                                        <option value="1">Elections départementales</option>
+                                        <option value="2">Elections régionales</option>
+                                        <option value="3">Elections législatives</option>
+                                    </select>
+                                    <small id="mainChoice" class="form-text">Choisissez l'election où
+                                        vous voulez candidatez</small>
+                                </div>
+
+                                <div class="group">
+                                    <label for="last_name" class="voterPrenom">Nom</label>
+                                    <input id="last_name" type="text"
+                                        class="form-control @error('last_name') is-invalid @enderror" name="last_name"
+                                        value="{{ old('last_name') }}" required autocomplete="name" autofocus>
+
+                                    @error('last_name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="group">
+                                <label for="first_name" class="voterNom">Prénom</label>
+                                <input id="first_name" type="text"
+                                    class="form-control @error('name') is-invalid @enderror" name="first_name"
+                                    value="{{ old('first_name') }}" required autocomplete="name" autofocus>
+
+                                @error('first_name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+
+                            </div>
+
+                            <div class="group">
+                                <label for="num_carte_national" class="voterCIN">N° de carte national</label>
+                                <input id="num_carte_national" type="text"
+                                    class="form-control @error('num_carte_national') is-invalid @enderror"
+                                    name="num_carte_national" value="{{ old('num_carte_national') }}" required
+                                    autocomplete="name" autofocus>
+
+                                @error('num_carte_national')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+
+                            <div class="group">
+                                <label for="date_of_birth" class="voterDN">Date de naissance</label>
+                                <input id="date_of_birth" type="date"
+                                    class="form-control @error('date_of_birth') is-invalid @enderror"
+                                    name="date_of_birth" value="{{ old('date_of_birth') }}" required autocomplete="name"
+                                    autofocus>
+
+                                @error('date_of_birth')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+
+                            </div>
+
+                            <div class="group">
+                                <label for="votermail" class="voterDN">Email</label>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                                    name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+
+                            <div class="group">
+                                <label for="passMP" class="passMP">Mot de passe</label>
+                                <input id="password" type="password"
+                                    class="form-control @error('password') is-invalid @enderror" name="password"
+                                    required autocomplete="new-password">
+
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong class="error_msg">{{ $message }}</strong>
+                                </span>
+                                @enderror
+
+                            </div>
+
+                            <div class="group">
+                                <label for="userCMP" class="userCMP">Confirmer Mot de passe</label>
+                                <input id="password-confirm" type="password" class="form-control"
+                                    name="password_confirmation" required autocomplete="new-password">
+                            </div>
+
+                            <div class="group">
+                                <button type="submit" class="button">
+                                    {{ __('S\'inscrire') }}
+                                </button>
+                            </div>
+
+                            <div class="registred">
+                                @if (Route::has('register'))
+                                <a id="mainChoice" href="{{ route('login') }}">{{ __('Déjà inscrit ?') }}</a>
+                                @endif
+                            </div>
+                    </div>
+                </div>
+        </div>
+        </form>
+    </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+function yesnoCheck(that) {
+    if (that.value == "Voter") {
+        document.getElementById("ifYes").style.display = "none";
+    } else {
+        document.getElementById("ifYes").style.display = "block";
+    }
+}
+</script>
+
+</html>
+@endsection
+<!--
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -12,18 +218,76 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end">Nom :</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="last_name" type="text" class="form-control @error('name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="name" autofocus>
 
-                                @error('name')
+                                @error('last_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="row mb-3">
+                            <label for="name" class="col-md-4 col-form-label text-md-end">Prénom :</label>
+
+                            <div class="col-md-6">
+                                <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="name" autofocus>
+
+                                @error('first_name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="name" class="col-md-4 col-form-label text-md-end">Date de naissance :</label>
+
+                            <div class="col-md-6">
+                                <input id="date_of_birth" type="date" class="form-control @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ old('date_of_birth') }}" required autocomplete="name" autofocus>
+
+                                @error('date_of_birth')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="name" class="col-md-4 col-form-label text-md-end">Numero carte nationl :</label>
+
+                            <div class="col-md-6">
+                                <input id="num_carte_national" type="text" class="form-control @error('num_carte_national') is-invalid @enderror" name="num_carte_national" value="{{ old('num_carte_national') }}" required autocomplete="name" autofocus>
+
+                                @error('num_carte_national')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-3">
+                            <label for="name" class="col-md-4 col-form-label text-md-end">Telephone :</label>
+
+                            <div class="col-md-6">
+                                <input id="telephone" type="text" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{ old('telephone') }}" required autocomplete="name" autofocus>
+
+                                @error('telephone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
 
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
@@ -74,4 +338,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection -->

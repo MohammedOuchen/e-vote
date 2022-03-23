@@ -1,0 +1,494 @@
+header img {
+    height: 80px;
+    margin-left: 40px;
+}
+
+body {
+    height: 125vh;
+    background-color: whitesmoke;
+    font-family: "Open Sans", sans-serif;
+    margin-top: 20px;
+    padding: 30px;
+}
+
+header {
+    background-color: #0e115a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+    z-index: 2;
+}
+
+header * {
+    display: inline;
+}
+
+header nav {
+    flex-grow: 1;
+    margin: 55px;
+}
+
+header nav ul {
+    float: right;
+}
+
+header li {
+    margin: 15px;
+}
+
+header li a {
+    color: white;
+    text-decoration: none;
+    font: 20px "Open Sans", sans-serif;
+}
+
+#foot-lnk {
+    color: white;
+    margin-left: 200px;
+}
+
+#foot-registred {
+    color: white;
+    margin: 100px;
+}
+
+.linksnav {
+    margin-top: 18px;
+}
+
+header li a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.buttons {
+    float: right;
+    margin-top: 30px;
+}
+
+.mainImg {
+    position: absolute;
+    z-index: 0;
+    margin-left: 30px;
+    margin-top: 150px;
+}
+
+.logoImg {
+    float: left;
+}
+
+button {
+    background-color: #dd131a;
+    border: none;
+    color: white;
+    padding: 15px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font: 20px "Open Sans", sans-serif;
+    border-radius: 10px;
+}
+
+button img {
+    margin-left: 10px;
+    height: 18px;
+}
+
+.title h1 {
+    font: 55px "Open Sans", sans-serif;
+    font-weight: bold;
+    color: #0e115a;
+    margin-top: 200px;
+    margin-left: 450px;
+    z-index: 1;
+}
+
+.subtitle h3 {
+    font: 25px "Open Sans", sans-serif;
+    font-weight: bold;
+    color: black;
+    margin-left: 480px;
+    z-index: 1;
+    margin-top: 50px;
+}
+
+.text p {
+    font: 20px "Open Sans", sans-serif;
+    color: black;
+    margin-left: 550px;
+    text-align: justify;
+    margin-top: 15px;
+    z-index: 1;
+    margin-top: 20px;
+    margin-right: 120px;
+}
+
+.InscButton {
+    margin-left: 500px;
+    margin-top: 25px;
+    font: 18px "Open Sans", sans-serif;
+    background-color: #dd131a;
+    color: white;
+    border: 2px solid #dd131a;
+    text-align: center;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.InscButton:hover {
+    background-color: white;
+    color: #dd131a;
+}
+
+.container {
+    margin-top: 80px;
+}
+
+h2 {
+    text-align: center;
+    color: #0e115a;
+}
+
+h5 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.card-text {
+    text-align: center;
+}
+
+.button {
+    background-color: #0e115a;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.button1 {
+    background-color: #0e115a;
+    color: white;
+    border: 2px solid #0e115a;
+    text-align: center;
+    margin-top: 3px;
+}
+
+.button1:hover {
+    background-color: white;
+    color: #0e115a;
+}
+
+.button2 {
+    background-color: #dd131a;
+    color: white;
+    border: 2px solid #dd131a;
+    text-align: center;
+}
+
+.button2:hover {
+    background-color: white;
+    color: #dd131a;
+}
+
+.row {
+    margin-bottom: 30px;
+}
+
+#liste {
+    color: #0e115a;
+}
+
+#voter {
+    color: #dd131a;
+}
+
+.button3 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button3 span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button3:hover span {
+    padding-right: 25px;
+    color: white;
+}
+
+.button3:hover span:after {
+    opacity: 1;
+    right: 0;
+    color: white;
+}
+
+.form-select {
+    min-width: 20px;
+}
+
+.buttonHome {
+    background-color: #dd131a;
+    color: white;
+    border: 2px solid #dd131a;
+    text-align: center;
+    padding: 15px 32px;
+    font: 20px "Open Sans", sans-serif;
+}
+
+.buttonHome:hover {
+    background-color: white;
+    color: #dd131a;
+}
+
+.divs {
+    display: flex;
+    margin-top: 150px;
+}
+
+.divs>div {
+    flex: 1;
+    margin: 30px;
+    margin-left: 50px;
+    max-width: 100%;
+    max-height: 100%;
+    width: 500px;
+}
+
+#redone {
+    background-color: #dd131a;
+    color: #fff;
+    padding: 30px;
+}
+
+.card-title {
+    color: #fff;
+}
+
+#blueone {
+    background-color: #0e115a;
+    color: #fff;
+}
+
+#whiteone {
+    color: #0e115a;
+}
+
+.buttonC {
+    background-color: white;
+    color: black;
+    border: 2px solid #0e115a;
+}
+
+.buttonC:hover {
+    opacity: 1;
+    right: 0;
+    color: white;
+    background-color: #dd131a;
+}
+
+.buttonV {
+    background-color: white;
+    color: black;
+    border: 2px solid #dd131a;
+}
+
+.buttonV:hover {
+    opacity: 1;
+    right: 0;
+    color: white;
+    background-color: #0e115a;
+}
+
+blockquote {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 100px;
+    padding: 50px;
+    color: #0e115a;
+}
+
+.textdeco {
+    text-decoration: underline;
+    color: #dd131a;
+}
+
+.titre_oublie {
+    font-size: 40px;
+    color: #0e115a;
+}
+
+.red_hr {
+    width: 30%;
+    color: #dd131a;
+    border-top: 5px solid white;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.blue_hr {
+    width: 30%;
+    color: #0e115a;
+    border-top: 5px solid #0e115a;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.wrapper {
+    display: inline-flex;
+    background: #fff;
+    height: 60px;
+    width: 200px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    padding: 20px 15px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+    margin-left: 80px;
+}
+
+.wrapper .option {
+    background: #fff;
+    height: 90%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0 10px;
+    border: 2px solid lightgrey;
+    transition: all 0.3s ease;
+}
+
+.wrapper .option .dot {
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 10px;
+}
+
+.wrapper .option .dot::before {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    background: #dd131a;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 0.3s ease;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#option-1:checked:checked~.option-1,
+#option-2:checked:checked~.option-2 {
+    border-color: #dd131a;
+    background: #dd131a;
+}
+
+#option-1:checked:checked~.option-1 .dot,
+#option-2:checked:checked~.option-2 .dot {
+    background: #fff;
+}
+
+#option-1:checked:checked~.option-1 .dot::before,
+#option-2:checked:checked~.option-2 .dot::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.wrapper .option span {
+    font-size: 15px;
+    color: #0e115a;
+}
+
+#option-1:checked:checked~.option-1 span,
+#option-2:checked:checked~.option-2 span {
+    color: #fff;
+}
+
+.buttonPassword {
+    background-color: #dd131a;
+    color: white;
+    border: 2px solid #dd131a;
+    text-align: center;
+    padding: 10px 12px;
+    font: 15px "Open Sans", sans-serif;
+}
+
+.buttonPassword:hover {
+    background-color: white;
+    color: #dd131a;
+}
+
+.div1 {
+    float: left;
+}
+
+.div2 {
+    float: right;
+    margin-top: 130px;
+    margin-right: -50px;
+}
+
+.reset_image {
+    position: absolute;
+    z-index: 0;
+    margin-left: -60px;
+    margin-top: 60px;
+}
+
+.namered {
+    color: #dd131a;
+}
+
+.error_msg {
+    color: #dd131a;
+    margin-left: -90px;
+}
+
+#ifYes {
+    display: none;
+}
+
+.titleC {
+    font: 55px "Open Sans", sans-serif;
+    font-weight: bold;
+    color: #0e115a;
+    margin-top: 200px;
+    margin: auto;
+    z-index: 1;
+}

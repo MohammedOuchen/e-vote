@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Election extends Model
+{
+    use HasFactory;
+
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'title',
+        'type',
+        'startDate',
+        'endDate',
+        'winner',
+        'active'
+    ];
+
+    public function condidates() {
+
+        return $this->hasMany(Candidate::class);
+     }
+
+     public function users() {
+
+        return $this->belongsToMany(User::class)
+                 ->withPivot('candidate_id');
+     }
+}

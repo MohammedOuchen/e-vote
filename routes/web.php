@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\CondidateController;
+use App\Http\Controllers\Admin\ElectionController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\VoterController;
+use App\Http\Controllers\Voter\UserController as VoterUserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -14,14 +19,46 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/home');
+})->name('homee');
+
+
+
+//after login
+Route::middleware(['auth', 'role:condidate|voter'])->group(function () {
+
+    Route::resource('/vote', VoterUserController::class)->only('index', 'store');
+    Route::get('/resultat',[VoterUserController::class, 'resultat'] )->name('resultat');
+    Route::post('/election-lsit', [VoterUserController::class, 'displayElection'])->name('display.election');
 });
 
-Route::get('/loginn', function () {
-    return view('loginn');
-});
 
+
+Route::get('/dashboardU', function () {
+    return view('dashboardU');
+})->name('dashboardU');
+
+Route::get('/test', function () {
+    return view('test');
+})->name('test');
+
+
+//after login
+Route::middleware(['auth', 'role:admin'])->group(function () {
+
+    Route::resource('/admin', UserController::class)->only('index');
+    Route::resource('/admin-vote', VoterController::class)->only('index', 'store');
+    Route::resource('/admin-condidate', CondidateController::class)->only('index','store');
+    Route::post('/admin-condidate-status', [CondidateController::class, 'setStatus'])->name('admin-condidate.status');
+    Route::post('/admin-voter-status', [VoterController::class, 'setStatus'])->name('admin-voter.status');
+    Route::resource('/admin-election', ElectionController::class)->only('index', 'create', 'store');
+
+});
 
 Auth::routes();
 
